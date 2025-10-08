@@ -48,7 +48,6 @@ class Lite6Demo(Node):
     # --- Create callback functions here ---
 
     # --- Motion primitives ------------------------------------------------
-
     def move_to_state(self, state_name: str):
         result, joint_values = self.group_states.get_joint_values(state_name)
         if not result:
