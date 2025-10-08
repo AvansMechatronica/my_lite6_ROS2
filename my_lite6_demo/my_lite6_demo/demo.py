@@ -97,18 +97,35 @@ class Lite6Demo(Node):
 def main():
     rclpy.init()
 
-    node = Lite6Demo()
+    # Create an instance of your custom Node class (here called "Lite6Demo")
+    # This must happen before creating the executor so that the node can be registered properly.
+    node = Lite6Demo()  # Note: must be created before adding it to the executor
 
-    # Run node in background thread (so MoveIt callbacks can spin)
-    executor = MultiThreadedExecutor(2)
+    # Create a multithreaded executor with 2 threads
+    # This allows the node to handle multiple callbacks concurrently (e.g., subscriptions, timers)
+    executor = MultiThreadedExecutor(num_threads=2)
+
+    # Add the node to the executor so it can process its callbacks
     executor.add_node(node)
+
+    # Start the executor in a separate background thread
+    # This keeps the ROS event loop (callback processing) running
+    # while your main thread can still execute custom logic (like execute_app)
     executor_thread = Thread(target=executor.spin, daemon=True)
     executor_thread.start()
 
+    # Create a 1 Hz rate object and sleep once to allow initialization
+    # Equivalent to "rclpy.spin_once(node)" but gives time for system setup (e.g., MoveIt, TF)
     node.create_rate(1.0).sleep()
+
+    # Run your custom main logic (defined inside the Assignment class)
+    # This typically executes the robot’s motion, computation, or control behavior
     node.execute_app()
 
+    # Shutdown ROS gracefully once the main logic finishes
     rclpy.shutdown()
+
+    # Wait for the executor thread to exit cleanly before terminating the program
     executor_thread.join()
 
 
