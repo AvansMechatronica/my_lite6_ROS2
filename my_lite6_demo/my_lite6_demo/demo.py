@@ -7,6 +7,7 @@ from threading import Thread
 from tf2_ros import Buffer, TransformListener, TransformException
 
 from my_moveit_python import srdfGroupStates, MovegroupHelper
+import tf_transformations
 
 
 class manipulatorController(Node):
@@ -84,19 +85,28 @@ class manipulatorController(Node):
     # --- App sequence ----------------------------------------------------
 
     def execute_app(self):
+
+        # Move through predefined joint states
         for state in ["left", "right", "home"]:
             self.move_to_state(state)
 
-        self.move_to_pose([0.5, 0.1, 0.25], [1.0, 0.0, 0.0, 0.0])
-        self.move_to_tf("test_transfer_frame", "xarm_link")
+        translation = [0.5, 0.0, 0.25] # Relative to base_link    
+        # RPY angles in radians
+        roll = 3.1415927 # De gripper is facing downwards
+        pitch = 0.0
+        yaw = 0.0
+        # Convert RPY to quaternion
+        rotation = tf_transformations.quaternion_from_euler(roll, pitch, yaw)
+
+        # Move to a specific pose
+        self.move_to_pose(translation, rotation)
+
         self.move_to_state("home")
 
 
 # --------------------------------------------------------------------------
-
-def main():
-    rclpy.init()
-
+# Do not modify the main function unless necessary.
+# --------------------------------------------------------------------------
 def main(args=None):
     rclpy.init(args=args)
 
