@@ -9,9 +9,9 @@ from tf2_ros import Buffer, TransformListener, TransformException
 from my_moveit_python import srdfGroupStates, MovegroupHelper
 
 
-class Lite6Demo(Node):
-    def __init__(self):
-        super().__init__("lite6_demo")
+class manipulatorController(Node):
+    def __init__(self, node_name):
+        super().__init__(node_name)
 
         # Robot parameters
         prefix = ""
@@ -97,35 +97,37 @@ class Lite6Demo(Node):
 def main():
     rclpy.init()
 
-    # Create an instance of your custom Node class (here called "Lite6Demo")
-    # This must happen before creating the executor so that the node can be registered properly.
-    node = Lite6Demo()  # Note: must be created before adding it to the executor
+def main(args=None):
+    rclpy.init(args=args)
 
-    # Create a multithreaded executor with 2 threads
-    # This allows the node to handle multiple callbacks concurrently (e.g., subscriptions, timers)
+    # Instantiate the manipulatorController node.
+    # NOTE: This must be done before creating the executor to ensure callbacks are registered correctly.
+    node = manipulatorController("demo")
+
+    # Create a multithreaded executor with 2 threads.
+    # Allows the node to handle multiple callbacks concurrently (e.g., subscriptions, timers).
     executor = MultiThreadedExecutor(num_threads=2)
 
-    # Add the node to the executor so it can process its callbacks
+    # Add the node to the executor so it can process its callbacks.
     executor.add_node(node)
 
-    # Start the executor in a separate background thread
-    # This keeps the ROS event loop (callback processing) running
-    # while your main thread can still execute custom logic (like execute_app)
+    # Start the executor in a separate background thread.
+    # Keeps the ROS event loop running while allowing the main thread to execute custom logic.
     executor_thread = Thread(target=executor.spin, daemon=True)
     executor_thread.start()
 
-    # Create a 1 Hz rate object and sleep once to allow initialization
-    # Equivalent to "rclpy.spin_once(node)" but gives time for system setup (e.g., MoveIt, TF)
+    # Create a 1 Hz rate object and sleep once to allow initialization.
+    # Provides time for system setup (e.g., MoveIt, TF) before running main logic.
     node.create_rate(1.0).sleep()
 
-    # Run your custom main logic (defined inside the Assignment class)
-    # This typically executes the robot’s motion, computation, or control behavior
+    # Execute the main application logic defined in the node.
+    # Typically runs robot motion, computations, or control behaviors.
     node.execute_app()
 
-    # Shutdown ROS gracefully once the main logic finishes
+    # Shutdown ROS gracefully after main logic completes.
     rclpy.shutdown()
 
-    # Wait for the executor thread to exit cleanly before terminating the program
+    # Wait for the executor thread to exit cleanly before terminating the program.
     executor_thread.join()
 
 
