@@ -13,9 +13,9 @@ import math
 from ament_index_python import get_package_share_directory
 from launch.launch_description_sources import load_python_launch_file_as_module
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, RegisterEventHandler
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, RegisterEventHandler, SetEnvironmentVariable
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, EnvironmentVariable
 from launch_ros.actions import Node
 from launch.conditions import IfCondition
 from launch_ros.substitutions import FindPackageShare
@@ -143,20 +143,15 @@ def launch_setup(context, *args, **kwargs):
                             '/clock' + '@rosgraph_msgs/msg/Clock' + '[gz.msgs.Clock'
                         ])
 
-    # Robot description publisher (publishes robot_description as a topic for controller_manager)
-    robot_description_publisher_node = Node(
-        package='my_uf_gazebo',
-        executable='publish_robot_description.py',
-        name='robot_description_publisher',
-        output='screen',
-        parameters=[{'use_sim_time': True}, robot_description],
-    )
+    # NOTE: We do NOT publish robot_description as a topic for Gazebo simulations
+    # The gz_ros2_control plugin creates its own controller_manager from the URDF
+    # and publishing robot_description causes a conflict/segfault
 
     # Build the list of nodes to launch
     nodes_to_launch = [
         robot_state_publisher_node,
         clock_bridge,
-        robot_description_publisher_node,
+        # robot_description_publisher_node,  # Commented out for Gazebo
         gazebo_launch,
         spawn_robot_node,
     ]
@@ -173,6 +168,29 @@ def launch_setup(context, *args, **kwargs):
 
 
 def generate_launch_description():
+    # Set Gazebo resource path to find xarm_description meshes
+    # For model://xarm_description/meshes/... to work, we need the parent of xarm_description
+    xarm_description_path = get_package_share_directory('xarm_description')
+    # Get parent directory (remove /xarm_description from the end)
+    xarm_share_parent = os.path.dirname(xarm_description_path)
+    
+    # Add ROS2 lib directory to Gazebo plugin path to find gz_ros2_control-system plugin
+    gz_plugin_path = os.environ.get('GZ_SIM_SYSTEM_PLUGIN_PATH', '')
+    ros2_lib_path = '/opt/ros/jazzy/lib'
+    if ros2_lib_path not in gz_plugin_path:
+        if gz_plugin_path:
+            gz_plugin_path = f"{ros2_lib_path}:{gz_plugin_path}"
+        else:
+            gz_plugin_path = ros2_lib_path
+    
     return LaunchDescription([
+        SetEnvironmentVariable(
+            name='GZ_SIM_RESOURCE_PATH',
+            value=xarm_share_parent
+        ),
+        SetEnvironmentVariable(
+            name='GZ_SIM_SYSTEM_PLUGIN_PATH',
+            value=gz_plugin_path
+        ),
         OpaqueFunction(function=launch_setup)
     ])

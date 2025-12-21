@@ -37,6 +37,8 @@ def launch_setup(context, *args, **kwargs):
 
     ros2_control_plugin = LaunchConfiguration('ros2_control_plugin', default='gz_ros2_control/GazeboSimSystem')
 
+    # Create parameters file for Gazebo WITHOUT robot_description to avoid segfault
+    # The gz_ros2_control plugin gets robot_description from the spawned URDF
     ros2_control_params = generate_ros2_control_params_temp_file(
         os.path.join(get_package_share_directory('my_uf_moveit_config'), 'config', 'ros2_controllers.yaml'),
         prefix=prefix.perform(context), 
@@ -74,7 +76,13 @@ def launch_setup(context, *args, **kwargs):
             add_vacuum_gripper=add_vacuum_gripper,
             add_bio_gripper=add_bio_gripper,
         )
-        .robot_description(file_path=urdf_file, mappings={'sim_gazebo': 'true'})
+        .robot_description(
+            file_path=urdf_file, 
+            mappings={
+                'ros2_control_plugin': 'gz_ros2_control/GazeboSimSystem',
+                'ros2_control_params': ros2_control_params
+            }
+        )
         .robot_description_semantic(file_path=srdf_file)
         .robot_description_kinematics(file_path=kinematics_file)
         .joint_limits(file_path=joint_limits_file)
