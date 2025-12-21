@@ -45,7 +45,7 @@ git clone https://github.com/<jouw_account_naam>/my_ufactory_ROS2.git
 ```bash
 mkdir -p ~/my_uf_ws/src
 cd ~/my_uf_ws/src
-git clone https://github.com/AvansMechatronica/my_uf_ROS2.git
+git clone https://github.com/AvansMechatronica/my_ufactory_ROS2.git
 ```
 
 :::
