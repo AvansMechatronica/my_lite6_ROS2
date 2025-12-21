@@ -44,6 +44,7 @@ def launch_setup(context, *args, **kwargs):
     xarm_type = '{}{}'.format(robot_type.perform(context), dof.perform(context) if robot_type.perform(context) in ('xarm', 'lite') else '')
     
     robot_description = {'robot_description': moveit_config_dict['robot_description']}
+    robot_description_content = moveit_config_dict.get('robot_description', '')
 
     # robot state publisher node
     robot_state_publisher_node = Node(
@@ -75,7 +76,10 @@ def launch_setup(context, *args, **kwargs):
         output='screen',
         arguments=[
             '-name', 'lite6_robot',
-            '-topic', 'robot_description',
+            '-string', robot_description_content,
+            '-x', '0',
+            '-y', '0',
+            '-z', '0.01',
         ],
         parameters=[{'use_sim_time': True}],
     )
@@ -139,10 +143,20 @@ def launch_setup(context, *args, **kwargs):
                             '/clock' + '@rosgraph_msgs/msg/Clock' + '[gz.msgs.Clock'
                         ])
 
+    # Robot description publisher (publishes robot_description as a topic for controller_manager)
+    robot_description_publisher_node = Node(
+        package='my_uf_gazebo',
+        executable='publish_robot_description.py',
+        name='robot_description_publisher',
+        output='screen',
+        parameters=[{'use_sim_time': True}, robot_description],
+    )
+
     # Build the list of nodes to launch
     nodes_to_launch = [
         robot_state_publisher_node,
         clock_bridge,
+        robot_description_publisher_node,
         gazebo_launch,
         spawn_robot_node,
     ]

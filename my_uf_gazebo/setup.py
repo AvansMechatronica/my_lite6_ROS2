@@ -52,4 +52,5 @@ setup(
         'console_scripts': [
         ],
     },
+    scripts=['scripts/publish_robot_description.py'],
 )

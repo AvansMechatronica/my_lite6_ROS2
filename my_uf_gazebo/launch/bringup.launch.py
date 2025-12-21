@@ -21,7 +21,7 @@ from uf_ros_lib.uf_robot_utils import generate_ros2_control_params_temp_file
 
 def launch_setup(context, *args, **kwargs):
     dof = LaunchConfiguration('dof', default=6)
-    robot_type = LaunchConfiguration('robot_type', default='xarm')
+    robot_type = LaunchConfiguration('robot_type', default='lite')
     prefix = LaunchConfiguration('prefix', default='')
     hw_ns = LaunchConfiguration('hw_ns', default='xarm')
     limited = LaunchConfiguration('limited', default=True)
@@ -74,7 +74,7 @@ def launch_setup(context, *args, **kwargs):
             add_vacuum_gripper=add_vacuum_gripper,
             add_bio_gripper=add_bio_gripper,
         )
-        .robot_description(file_path=urdf_file)
+        .robot_description(file_path=urdf_file, mappings={'sim_gazebo': 'true'})
         .robot_description_semantic(file_path=srdf_file)
         .robot_description_kinematics(file_path=kinematics_file)
         .joint_limits(file_path=joint_limits_file)
