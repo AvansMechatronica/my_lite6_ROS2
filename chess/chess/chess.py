@@ -23,7 +23,7 @@ joint_names = [
 base_link_name = "link_base"
 end_effector_name = "link6"
 group_name = "lite6"
-package_name = 'my_lite6_moveit_config'
+package_name = 'my_uf_moveit_config'
 srdf_file_name = 'config/lite6_robot.srdf'
 
 

@@ -3,27 +3,28 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to my uFactory lite6 workshop
-=====================================
+Welkom bij de uFactory Template Repository
+=================================================
 
-**uFacory lite6 workshop** is een workshop voor Avans studenten die aan de slag willen met een Ufactory lite6 robot
+**Welkom bij de uFactory Template Repository** 
 
 .. note::
    This project is under active development.
 
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 3
+   :caption: Inhoudsopgave:
+
+   documentation/overview.md
+   documentation/install.md
+   documentation/setup_assistant.md
+   documentation/simulation.md
+   documentation/demo_programms.md
+   documentation/real_robot.md
+   documentation/teachbot.md
+   documentation/troubleshooting.md
 
 
-
-Deze workshop is ontwikkeld door:
-
-+ Avans Academie voor Technologie en Innovatie (ATIx)
-+ Avans Centre Of Expertises, lectoraat Robotisering en Sensoring
-
-License
--------
-
-`License CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_
+# License
+[License CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)

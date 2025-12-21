@@ -1,6 +1,5 @@
-# ROS2 uFactory lite6 Workshop(Jazzy-version)
+# my_uf_ROS2 template for Universal Robot Programming
 
-# [Documentatie](https://avansmechatronica.github.io/my_lite6_ROS2/)
-
+# [Documentatie](https://avansmechatronica.github.io/my_uf_ROS2/)
 
 [Licentie](licence.md)

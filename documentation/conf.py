@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Avans: my Ufactory lite6 workshop'
-copyright = 'Avans ATIx: Gerard Harkema'
+project = 'uFactory Template Repository'
+copyright = 'Gerard Harkema'
 author = 'Gerard Harkema'
 release = '0.1'
 
@@ -24,7 +24,9 @@ language = 'nl'
 
 extensions = [
     'myst_parser',
-    'sphinx_copybutton'
+    'sphinx_design',
+    'sphinx_copybutton',
+    'sphinx.ext.mathjax'
 ]
 
 
@@ -39,3 +41,9 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_logo = "_static/avans-hogeschool.png"
 
+myst_enable_extensions = ["html_admonition", "html_image", "colon_fence", "dollarmath"]
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
