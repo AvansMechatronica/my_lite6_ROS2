@@ -16,6 +16,7 @@ class manipulatorController(Node):
 
         # Robot parameters
         prefix = ""
+        # arrange the joint_names alphabetically to match URDF
         self.joint_names = [
             prefix + "joint1",
             prefix + "joint2",
@@ -101,8 +102,11 @@ class manipulatorController(Node):
         # Move to a specific pose
         self.move_to_pose(translation, rotation)
 
+        # Move back to home position
         self.move_to_state("home")
 
+        # Move to resting position
+        self.move_to_state("resting")
 
 # --------------------------------------------------------------------------
 # Do not modify the main function unless necessary.
