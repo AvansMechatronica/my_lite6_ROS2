@@ -3,7 +3,12 @@
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
 
     <!-- Import lite6_robot urdf file -->
-    <!-- This already includes ros2_control from xarm_description -->
     <xacro:include filename="$(find my_uf_description)/urdf/lite6_robot.urdf.xacro" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="lite6_robot.ros2_control.xacro" />
+
+
+    <xacro:lite6_robot_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
 
 </robot>

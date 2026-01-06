@@ -2,8 +2,11 @@
 import os
 from ament_index_python import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import TimerAction
+from launch.actions import TimerAction, IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import PathJoinSubstitution
 from launch_ros.actions import Node
+from launch_ros.substitutions import FindPackageShare
 from uf_ros_lib.moveit_configs_builder import MoveItConfigsBuilder
 
 
@@ -29,17 +32,16 @@ def generate_launch_description():
         .to_moveit_configs()
     )
 
-    # Move group node with parameters
-    move_group_node = Node(
-        package='moveit_ros_move_group',
-        executable='move_group',
-        output='screen',
-        parameters=[moveit_config.to_dict()],
+    # Include move_group launch file from my_uf_moveit_config
+    move_group_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('my_uf_moveit_config'), 'launch', 'move_group.launch.py'])
+        ),
     )
 
     # Demo node - delayed to allow MoveIt2 to start
     demo_node = TimerAction(
-        period=3.0,
+        period=5.0,
         actions=[
             Node(
                 package='my_uf_demo_cpp',
@@ -52,6 +54,6 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        move_group_node,
+        move_group_launch,
         demo_node,
     ])

@@ -1,5 +1,8 @@
 #include <cstdio>
 #include <iostream>
+#include <fstream>
+#include <thread>
+#include <chrono>
 using namespace std;
 //#include <pluginlib/class_loader.hpp>
 
@@ -12,6 +15,7 @@ using namespace std;
 #include <moveit_msgs/msg/planning_scene.h>
 //#include <moveit_visual_tools/moveit_visual_tools.h>
 #include <moveit/move_group_interface/move_group_interface.h>
+#include <ament_index_cpp/get_package_share_directory.hpp>
 
 static const rclcpp::Logger LOGGER = rclcpp::get_logger("my_uf_demo_cpp");
 
@@ -23,9 +27,27 @@ int main(int argc, char ** argv)
     printf("My uFactory Lite6 demo CPP\n");
  
     rclcpp::init(argc, argv);
-    //rclcpp::NodeOptions node_options;
-    //node_options.automatically_declare_parameters_from_overrides(true);
-    auto move_group_node = rclcpp::Node::make_shared("my_node", rclcpp::NodeOptions().automatically_declare_parameters_from_overrides(true));
+    
+    auto move_group_node = rclcpp::Node::make_shared("uf_lite6_demo_node", rclcpp::NodeOptions().automatically_declare_parameters_from_overrides(true));
+    
+    // Load robot description from file if not provided as parameter
+    // Dit is een warop. Op enige wijze kan de param list niet worden gezien door de demo node
+    if (!move_group_node->has_parameter("robot_description_semantic")) {
+        try {
+            std::string pkg_path = ament_index_cpp::get_package_share_directory("my_uf_moveit_config");
+            std::string srdf_path = pkg_path + "/config/lite6_robot.srdf";
+            
+            std::ifstream srdf_file(srdf_path);
+            if (srdf_file.is_open()) {
+                std::string srdf_content((std::istreambuf_iterator<char>(srdf_file)),
+                                         std::istreambuf_iterator<char>());
+                move_group_node->declare_parameter("robot_description_semantic", srdf_content);
+                RCLCPP_INFO(LOGGER, "Loaded robot_description_semantic from file");
+            }
+        } catch (const std::exception& e) {
+            RCLCPP_WARN(LOGGER, "Could not load SRDF: %s", e.what());
+        }
+    }
  
 
     // We spin up a SingleThreadedExecutor for the current state monitor to get information
@@ -34,6 +56,8 @@ int main(int argc, char ** argv)
     executor.add_node(move_group_node);
     std::thread([&executor]() { executor.spin(); }).detach();
  
+    // Give move_group time to initialize
+    std::this_thread::sleep_for(std::chrono::seconds(2));
  
     // MoveIt operates on sets of joints called "planning groups" and stores them in an object called
     // the ``JointModelGroup``. Throughout MoveIt, the terms "planning group" and "joint model group"
