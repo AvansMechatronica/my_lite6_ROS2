@@ -1,10 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://wiki.ros.org/xacro" name="lite6_robot">
 
-  <!--
-  <xacro:arg name="prefix" default="arm_"/>
-  <xacro:arg name="hw_ns" default="xarm"/>
-  -->
+
   <xacro:arg name="prefix" default=""/>
   <xacro:arg name="hw_ns" default=""/>
   <xacro:arg name="limited" default="false"/>
@@ -44,7 +41,7 @@
   <xacro:arg name="baud_checkset" default="true"/>
   <xacro:arg name="default_gripper_baud" default="2000000"/>
   
- <xacro:arg name="attach_to" default="xarm_link"/>
+  <xacro:arg name="attach_to" default="xarm_link"/>
  
   <xacro:arg name="attach_xyz" default="0 0 0"/>
   <xacro:arg name="attach_rpy" default="0 0 0"/>
@@ -54,22 +51,39 @@
 
   <!-- load xarm device -->
   <xacro:include filename="$(find xarm_description)/urdf/xarm_device_macro.xacro" />
-  <xacro:xarm_device prefix="$(arg prefix)" hw_ns="$(arg hw_ns)" limited="$(arg limited)" 
-    effort_control="$(arg effort_control)" velocity_control="$(arg velocity_control)"
-    dof="$(arg dof)" 
-    ros2_control_plugin="$(arg ros2_control_plugin)" robot_type="$(arg robot_type)" 
-    load_gazebo_plugin="true" ros2_control_params="$(arg ros2_control_params)"
-    add_other_geometry="$(arg add_other_geometry)" 
-    geometry_type="$(arg geometry_type)" geometry_mass="$(arg geometry_mass)"
-    geometry_height="$(arg geometry_height)" geometry_radius="$(arg geometry_radius)"
-    geometry_length="$(arg geometry_length)" geometry_width="$(arg geometry_width)"
-    geometry_mesh_filename="$(arg geometry_mesh_filename)"
-    geometry_mesh_origin_xyz="$(arg geometry_mesh_origin_xyz)" geometry_mesh_origin_rpy="$(arg geometry_mesh_origin_rpy)"
-    geometry_mesh_tcp_xyz="$(arg geometry_mesh_tcp_xyz)" geometry_mesh_tcp_rpy="$(arg geometry_mesh_tcp_rpy)"
-    robot_ip="$(arg robot_ip)" report_type="$(arg report_type)"
-    baud_checkset="$(arg baud_checkset)" default_gripper_baud="$(arg default_gripper_baud)"
-    model1300="$(arg model1300)" attach_to="$(arg attach_to)" attach_xyz="$(arg attach_xyz)" attach_rpy="$(arg attach_rpy)"
-    robot_sn="$(arg robot_sn)" use_gazebo_camera="$(arg use_gazebo_camera)" mesh_suffix="$(arg mesh_suffix)" kinematics_suffix="$(arg kinematics_suffix)" />
+  <xacro:xarm_device prefix="$(arg prefix)" 
+                     hw_ns="$(arg hw_ns)" 
+                     limited="$(arg limited)" 
+                     effort_control="$(arg effort_control)"
+                     velocity_control="$(arg velocity_control)"
+                     dof="$(arg dof)"
+                     ros2_control_plugin="$(arg ros2_control_plugin)"
+                     robot_type="$(arg robot_type)" 
+                     load_gazebo_plugin="true"
+                     ros2_control_params="$(arg ros2_control_params)"
+                     add_other_geometry="$(arg add_other_geometry)" 
+                     geometry_type="$(arg geometry_type)" 
+                     geometry_mass="$(arg geometry_mass)"
+                     geometry_height="$(arg geometry_height)"
+                     geometry_radius="$(arg geometry_radius)"
+                     geometry_length="$(arg geometry_length)"
+                     geometry_mesh_filename="$(arg geometry_mesh_filename)"
+                     geometry_mesh_origin_xyz="$(arg geometry_mesh_origin_xyz)" 
+                     geometry_mesh_origin_rpy="$(arg geometry_mesh_origin_rpy)"
+                     geometry_mesh_tcp_xyz="$(arg geometry_mesh_tcp_xyz)" 
+                     geometry_mesh_tcp_rpy="$(arg geometry_mesh_tcp_rpy)"
+                     robot_ip="$(arg robot_ip)"
+                     report_type="$(arg report_type)"
+                     baud_checkset="$(arg baud_checkset)"
+                     default_gripper_baud="$(arg default_gripper_baud)"
+                     model1300="$(arg model1300)" 
+                     attach_to="$(arg attach_to)"
+                     attach_xyz="$(arg attach_xyz)"
+                     attach_rpy="$(arg attach_rpy)"
+                     robot_sn="$(arg robot_sn)" 
+                     use_gazebo_camera="$(arg use_gazebo_camera)" 
+                     mesh_suffix="$(arg mesh_suffix)" 
+                     kinematics_suffix="$(arg kinematics_suffix)" />
 
   <material name="LightGrey">
       <color rgba="0.7 0.7 0.7 1.0" />
