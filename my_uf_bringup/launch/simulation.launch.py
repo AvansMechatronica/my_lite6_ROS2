@@ -5,6 +5,7 @@
 # All rights reserved.
 #
 # Author: Vinman <vinman.wen@ufactory.cc> <vinman.cub@gmail.com>
+# Adapted for Avans ROS2 Industrial Workshop by Gerard Harkema, may 2025
 
 import os
 import yaml
@@ -22,7 +23,7 @@ def launch_setup(context, *args, **kwargs):
     dof = LaunchConfiguration('dof', default=6)
     robot_type = LaunchConfiguration('robot_type', default='lite')
     prefix = LaunchConfiguration('prefix', default='')
-    hw_ns = LaunchConfiguration('hw_ns', default='lite')
+    hw_ns = LaunchConfiguration('hw_ns', default='xarm')
     limited = LaunchConfiguration('limited', default=True)
     attach_to = LaunchConfiguration('attach_to', default='xarm_link')
     attach_xyz = LaunchConfiguration('attach_xyz', default='"0 0 0.0"')
@@ -34,8 +35,10 @@ def launch_setup(context, *args, **kwargs):
 
     ros_namespace = LaunchConfiguration('ros_namespace', default='').perform(context)
 
-    ros2_control_plugin = 'gazebo_ros2_control/GazeboSystem'
+    ros2_control_plugin = LaunchConfiguration('ros2_control_plugin', default='gz_ros2_control/GazeboSimSystem')
 
+    # Create parameters file for Gazebo WITHOUT robot_description to avoid segfault
+    # The gz_ros2_control plugin gets robot_description from the spawned URDF
     ros2_control_params = generate_ros2_control_params_temp_file(
         os.path.join(get_package_share_directory('my_uf_moveit_config'), 'config', 'ros2_controllers.yaml'),
         prefix=prefix.perform(context), 
@@ -73,7 +76,13 @@ def launch_setup(context, *args, **kwargs):
             add_vacuum_gripper=add_vacuum_gripper,
             add_bio_gripper=add_bio_gripper,
         )
-        .robot_description(file_path=urdf_file)
+        .robot_description(
+            file_path=urdf_file, 
+            mappings={
+                'ros2_control_plugin': 'gz_ros2_control/GazeboSimSystem',
+                'ros2_control_params': ros2_control_params
+            }
+        )
         .robot_description_semantic(file_path=srdf_file)
         .robot_description_kinematics(file_path=kinematics_file)
         .joint_limits(file_path=joint_limits_file)
@@ -87,8 +96,8 @@ def launch_setup(context, *args, **kwargs):
     # robot moveit common launch
     # xarm_moveit_config/launch/_robot_moveit_common2.launch.py
     robot_moveit_common_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(PathJoinSubstitution([FindPackageShare('xarm_moveit_config'), 'launch', '_robot_moveit_common2.launch.py'])),
-        launch_arguments={
+            PythonLaunchDescriptionSource(PathJoinSubstitution([FindPackageShare('my_uf_bringup'), 'launch', 'support', '_robot_moveit_common2.launch.py'])),
+    launch_arguments={
             'prefix': prefix,
             'attach_to': attach_to,
             'attach_xyz': attach_xyz,
@@ -96,21 +105,21 @@ def launch_setup(context, *args, **kwargs):
             'show_rviz': 'false',
             'use_sim_time': 'true',
             'moveit_config_dump': moveit_config_dump,
-            'rviz_config': PathJoinSubstitution([FindPackageShare('my_uf_bringup'), 'rviz', 'moveit.rviz'])
+            'rviz_config': PathJoinSubstitution([FindPackageShare('my_uf_bringup'), 'rviz', 'environment.rviz'])
         }.items(),
     )
 
     # robot gazebo launch
     # mbot_demo/launch/_robot_on_mbot_gazebo.launch.py
     robot_gazebo_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(PathJoinSubstitution([FindPackageShare('my_uf_bringup'), 'launch', '_gazebo.launch.py'])),
+        PythonLaunchDescriptionSource(PathJoinSubstitution([FindPackageShare('my_uf_bringup'), 'launch', 'support', '_gazebo_ign.launch.py'])),
         launch_arguments={
             'dof': dof,
             'robot_type': robot_type,
             'prefix': prefix,
             'moveit_config_dump': moveit_config_dump,
             'show_rviz': 'true',
-            'rviz_config': PathJoinSubstitution([FindPackageShare('my_uf_bringup'), 'rviz', 'moveit.rviz'])
+            'rviz_config': PathJoinSubstitution([FindPackageShare('my_uf_bringup'),'rviz', 'environment.rviz'])
         }.items(),
     )
 

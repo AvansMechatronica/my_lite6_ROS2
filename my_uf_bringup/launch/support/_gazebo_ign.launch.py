@@ -40,7 +40,7 @@ def launch_setup(context, *args, **kwargs):
 
     moveit_config_dump = moveit_config_dump.perform(context)
     moveit_config_dict = yaml.load(moveit_config_dump, Loader=yaml.FullLoader) if moveit_config_dump else {}
-    moveit_config_package_name = 'my_uf_gazebo'
+    moveit_config_package_name = 'my_uf_bringup'
     xarm_type = '{}{}'.format(robot_type.perform(context), dof.perform(context) if robot_type.perform(context) in ('xarm', 'lite') else '')
     
     robot_description = {'robot_description': moveit_config_dict['robot_description']}
@@ -59,7 +59,7 @@ def launch_setup(context, *args, **kwargs):
     )
  
     # ignition gazebo launch
-    xarm_gazebo_world = PathJoinSubstitution([FindPackageShare('my_uf_gazebo'), 'worlds', 'casus.world'])
+    xarm_gazebo_world = PathJoinSubstitution([FindPackageShare('my_uf_bringup'), 'worlds', 'empty_world.world'])
     gazebo_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(PathJoinSubstitution([FindPackageShare('ros_gz_sim'), 'launch', 'gz_sim.launch.py'])),
         launch_arguments={

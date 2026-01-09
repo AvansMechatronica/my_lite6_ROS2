@@ -8,14 +8,14 @@ import os
 def generate_launch_description():
     # Define the path to the URDF file within the package
     urdf_file_path = os.path.join(
-        get_package_share_directory('my_uf_gazebo'),
+        get_package_share_directory('my_uf_bringup'),
         'urdf',
         'environment.urdf.xacro'
     )
 
     # Define the path to the RViz configuration file within the package
     rviz_config_path = os.path.join(
-        get_package_share_directory('my_uf_gazebo'),
+        get_package_share_directory('my_uf_bringup'),
         'rviz',
         'environment.rviz'
     )
