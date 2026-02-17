@@ -157,8 +157,9 @@ def launch_setup(context, *args, **kwargs):
     ]
     
     # Add RViz if requested
-    if show_rviz.perform(context) in ('True', 'true'):
-        nodes_to_launch.append(rviz2_node)
+    if 0:
+        if show_rviz.perform(context) in ('True', 'true'):
+            nodes_to_launch.append(rviz2_node)
     
     # Add controllers if requested
     if len(controller_nodes) > 0:

@@ -12,8 +12,10 @@ import yaml
 from ament_index_python import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import OpaqueFunction, IncludeLaunchDescription, DeclareLaunchArgument
+from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from uf_ros_lib.moveit_configs_builder import MoveItConfigsBuilder
 from uf_ros_lib.uf_robot_utils import generate_ros2_control_params_temp_file
@@ -32,6 +34,8 @@ def launch_setup(context, *args, **kwargs):
     add_gripper = LaunchConfiguration('add_gripper', default=False)
     add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper', default=False)
     add_bio_gripper = LaunchConfiguration('add_bio_gripper', default=False)
+    
+    launch_rviz = LaunchConfiguration('launch_rviz', default='true')
 
     ros_namespace = LaunchConfiguration('ros_namespace', default='').perform(context)
 
@@ -83,11 +87,11 @@ def launch_setup(context, *args, **kwargs):
                 'ros2_control_params': ros2_control_params
             }
         )
-        #.robot_description_semantic(file_path=srdf_file)
-        #.robot_description_kinematics(file_path=kinematics_file)
-        #.joint_limits(file_path=joint_limits_file)
-        #.trajectory_execution(file_path=controllers_file)
-        #.planning_pipelines(config_folder=pipeline_filedir)
+        .robot_description_semantic(file_path=srdf_file)
+        .robot_description_kinematics(file_path=kinematics_file)
+        .joint_limits(file_path=joint_limits_file)
+        .trajectory_execution(file_path=controllers_file)
+        .planning_pipelines(config_folder=pipeline_filedir)
         .to_moveit_configs()
     )
 
@@ -109,24 +113,28 @@ def launch_setup(context, *args, **kwargs):
         }.items(),
     )
 
-    # robot gazebo launch
-    # mbot_demo/launch/_robot_on_mbot_gazebo.launch.py
-    robot_gazebo_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(PathJoinSubstitution([FindPackageShare('my_uf_bringup'), 'launch', 'support', '_gazebo_ign.launch.py'])),
-        launch_arguments={
-            'dof': dof,
-            'robot_type': robot_type,
-            'prefix': prefix,
-            'moveit_config_dump': moveit_config_dump,
-            'show_rviz': 'true',
-            'rviz_config': PathJoinSubstitution([FindPackageShare('my_uf_bringup'),'rviz', 'environment.rviz'])
-        }.items(),
+    # rviz with moveit configuration
+    rviz_config_file = PathJoinSubstitution(
+        [FindPackageShare("my_uf_bringup"), "rviz", "moveit.rviz"]
+    )
+    rviz_node = Node(
+        package="rviz2",
+        condition=IfCondition(launch_rviz),
+        executable="rviz2",
+        name="rviz2_moveit",
+        output="log",
+        arguments=["-d", rviz_config_file],
+        parameters=[
+            moveit_config.to_dict(),
+            {"use_sim_time": True}
+        ],
     )
 
 
+
     return [
-        robot_gazebo_launch,
-        #robot_moveit_common_launch,
+        robot_moveit_common_launch,
+        rviz_node,
     ]
 
 
