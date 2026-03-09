@@ -20,7 +20,7 @@ Gebruik alleen de `LAN` poorten van de router, niet de `WAN` poort.
 :::
 
 
-::::
+::::::
 
 :::::{tab-item} Windows: Rechtstreekse met een `cat5-kabel`
 :::: {attention}
@@ -86,7 +86,7 @@ Soms komt de netwerk verbinding niet tot stand, in dat geval kan het helpen om d
 
 ::::::
 
-:::::::
+
 
 ### Netwerkconfiguratie development-computer testen
 Open een terminal en voer het volgende commando uit:
