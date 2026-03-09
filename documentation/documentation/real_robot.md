@@ -22,8 +22,47 @@ Gebruik alleen de `LAN` poorten van de router, niet de `WAN` poort.
 
 ::::
 
-::::{tab-item} Rechtstreekse met een `cat5-kabel`
-Je kunt ook een rechtstreekse verbinding opzetten tussen de robot en development-computer door middel van een `cat5-kabel`. Kies deze optie als je geen andere apparaten in het netwerk wilt opnemen.
+:::::{tab-item} Windows: Rechtstreekse met een `cat5-kabel`
+:::: {attention}
+Gebruik deze optie als je een Virtual Machine gebruikt op je development-computer.
+::::
+
+Je kunt een rechtstreekse verbinding opzetten tussen de robot en development-computer door middel van een `cat5-kabel`. Kies deze optie als je geen andere apparaten in het netwerk wilt opnemen.
+
+Je kunt in dit geval het ip-adres van de robot en development-computer handmatig instellen. Zorg ervoor dat je deveopment-computer een ip-adres krijgt in het subnet `192.168.1.x`.
+
+Volg dez stappen voor het instellen van een statisch ip-adres op Windows:
+
+Druk op Win + R, typ ncpa.cpl en druk op Enter.
+1. Klik met de rechtermuisknop op je Ethernet adapter en kies Eigenschappen.
+2. Selecteer Internet Protocol Version 4 (TCP/IPv4) en klik op Eigenschappen.
+3. Kies "Het volgende IP-adres gebruiken":
+1. IP-adres: 192.168.1.2
+2. Subnetmasker: 255.255.255.0 (dit wordt automatisch ingevuld)
+3. Standaardgateway: 192.168.1.1
+4. Klik op OK.
+
+De development-computer is nu geconfigureerd met een statisch ip-adres 192.168.1.2 in het subnet `192.168.1.x`.
+
+::::{grid} 2
+:::{grid-item-card} 
+![Image](../images/Ethernet.jpg)
+:::
+:::{grid-item-card}
+![Image](../images/Ethernet-ip4.jpg)
+:::
+::::
+
+
+
+::::{tip}
+Soms komt de netwerk verbinding niet tot stand, in dat geval kan het helpen om de netwerkverbindingen uit en weer aan te zetten. Je kunt ook proberen om de robot en development-computer te rebooten.
+::::
+
+:::::
+
+:::::{tab-item} Linux: Rechtstreekse met een `cat5-kabel`
+Je kunt een rechtstreekse verbinding opzetten tussen de robot en development-computer door middel van een `cat5-kabel`. Kies deze optie als je geen andere apparaten in het netwerk wilt opnemen.
 
 je kunt in dit geval het ip-adres van de robot en development-computer handmatig instellen. Zorg ervoor dat je deveopment-computer een ip-adres krijgt in het subnet `192.168.1.x`.
 
@@ -39,15 +78,15 @@ Kies onder `wired` het tandwiel icoon en vervolgens `IPv4` tabblad. Kies hier vo
 
 Sluit de instellingen.
 
-:::{tip}
+::::{tip}
 Soms komt de netwerk verbinding niet tot stand, in dat geval kan het helpen om de netwerkverbindingen uit en weer aan te zetten. Je kunt ook proberen om de robot en development-computer te rebooten.
-:::
-
 ::::
 
 :::::
 
 ::::::
+
+:::::::
 
 ### Netwerkconfiguratie development-computer testen
 Open een terminal en voer het volgende commando uit:
