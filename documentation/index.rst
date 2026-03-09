@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welkom bij de uFactory Template Repository
-=================================================
+Welkom bij de uFactory Lite6 Template Repository
+================================================
 
-**Welkom bij de uFactory Template Repository** 
+**Welkom bij de uFactory Lite6 Template Repository** 
 
 .. note::
    This project is under active development.
@@ -18,13 +18,18 @@ Welkom bij de uFactory Template Repository
 
    documentation/overview.md
    documentation/install.md
-   documentation/setup_assistant.md
-   documentation/simulation.md
-   documentation/demo_programms.md
    documentation/real_robot.md
+   documentation/simulation.md
+   documentation/setup_assistant.md
+   documentation/virtual_environment.md
+   documentation/demo_programms.md
+   documentation/robotiq.md
    documentation/teachbot.md
    documentation/troubleshooting.md
+   documentation/faq.md
 
 
-# License
-[License CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+License
+=======
+
+`License CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_

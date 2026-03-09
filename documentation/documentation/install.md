@@ -1,15 +1,14 @@
-# Installatie van de uFactory-template
+# Installatie van de uFactory Lite6-template
 
+Hier wordt beschreven hoe je de template kunt verkrijgen, kunt bouwen en tenslotte kunt testen.
 
+## Development computer
+Als in dit document gesproken wordt over een development-computer dan wordt hiermee bedoeld de laptop/computer waarop je de software in ROS2 ontwikkelt.
 
+## Cloning de ROS2 uFactory Lite6 template
+Voor het maken van de ROS2 uFactory Lite6 template maak je gebruik van een Github repository. Je kunt er voor kiezen om deze clone onder een eigen account van Github te plaatsen (1e keuze hieronder). Je kunt daarna eenvoudig backup's van je werk maken naar je eigen Github account.
 
-Voor dat je begint dien je een clone van de `my_ufactory_ROS2` repository te maken.
-
-
-## Cloning de ROS2 Universal Robots template
-Voor het maken van de ROS2 Universal Robots template maak je gebruik van een Github clone die is voorbereid. Je kunt er voor kiezen om deze clone onder een eigen account van Github te plaatsen (1e keuze hieronder). Je kunt daarna eenvoudig backup's van je werk maken naar je eigen Github account.
-
-> we maken gebruik van een prefix my_uf in de packages van de repository om onderscheid te maken met de standaard Universal Robots packages.
+> we maken gebruik van een prefix `my_ur` in de packages van de repository om onderscheid te maken met de standaard uFactory Lite6 packages.
 
 :::::{card} 
 
@@ -19,7 +18,7 @@ Voor het maken van de ROS2 Universal Robots template maak je gebruik van een Git
 
 * Maak een account aan bij [Github](https://github.com/) en login op dit account
 
-* Open de [my_uf_ROS2](https://github.com/AvansMechatronica/my_ufactory_ROS2) repository
+* Open de [my_ufactory_ROS2](https://github.com/AvansMechatronica/my_ufactory_ROS2) repository
 
 * Maak een Fork van de repository naar je eigen Github account door op het **Fork icoon**  te klikken:
 
@@ -56,19 +55,38 @@ git clone https://github.com/AvansMechatronica/my_ufactory_ROS2.git
 
 
 
-## Installatie van Universal Robot support packages
+## Installatie van uFactory Lite6 Robot support packages
+Met onderstaand commando worden alle benodigde software voor de template geinstalleerd en de workspace gebouwd met colcon.
 
 ```bash
-cd ~/my_uf_ws/src/my_uf_ROS2/install
+cd ~/my_uf_ws/src/my_ufactory_ROS2/install
 ./install
 ```
 
 ## Bouwen van de workspace
-> Dit is al gebeurd in de installatie. Wijzig je iets in de workspace dan kun je als volgt bouwen
+> Dit is al gebeurd in de installatie. Wijzig je iets in de workspace dan kun je als volgt bouwen.
 ```bash
 # Build the workspace
 cd ~/my_uf_ws
 colcon build --symlink-install
 source install/setup.bash
-
 ```
+
+Heb je slechts 1 package gewijzigd dan kun je onderstaand commando gebruiken om betreffende package te bouwen.
+
+```bash
+# Build one of the packages in the workspace
+cd ~/my_uf_ws
+colcon build --symlink-install --packages-select <package_name>
+source install/setup.bash
+```
+
+## Testen van de installatie
+Je kunt de installatie testen door onderstaand commando. Je hebt hiervoor geen fysieke robot of simulatie omgeving nodig.
+
+```bash
+ros2 launch my_uf_moveit_config demo.launch.py
+```
+Je kunt nu in RVIZ het model van de robot-applicatie zien en met de knop `Goal State` een positie kiezen en de weg naar de positie volgen met de `Plan` knop. Stel eventueel eerst een `Start State` in.
+
+>Omdat er geen fysieke robot of Gazebo simulatie is kun je geen `Execute` functies uitvoeren.

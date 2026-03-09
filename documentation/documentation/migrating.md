@@ -1,1 +1,2 @@
-# Een andere URx gebruiken
+# Een andere uFactory-type robot configureren.
+
