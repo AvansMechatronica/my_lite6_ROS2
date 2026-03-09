@@ -23,7 +23,7 @@ Welkom bij de uFactory Lite6 Template Repository
    documentation/setup_assistant.md
    documentation/virtual_environment.md
    documentation/demo_programms.md
-   documentation/robotiq.md
+   documentation/gripper.md
    documentation/teachbot.md
    documentation/troubleshooting.md
    documentation/faq.md
