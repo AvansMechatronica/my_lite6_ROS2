@@ -3,7 +3,7 @@
 ![image](../images/Logo_TOS_blauw.svg)
 **TeleOperation Services B.V.**
 
-Met de TOS-Teachbot kun je met een teleoperatie de joints van de UR robot bewegen.
+Met de TOS-Teachbot kun je met een teleoperatie de joints van de uFactory Lite6 robot bewegen.
 
 ![inmage](../images/teachbot.png)   
 
@@ -36,7 +36,7 @@ ros2 launch my_uf_bringup movegroup.launch.py
 
 Start de simualtie:
 ```bash
-ros2 launch my_uf_bringup simulatreal_robotion.launch.py
+ros2 launch my_uf_bringup real_robot.launch.py
 ```
 
 Er wordt de Gazebo simulatie omgeving voor een UR5 robot geopend en een RVIZ monitor. Vanuit de RVIZ monitor kun je door middel van de real_robot movegroup de robot laten bewegen naar voor ingestelde posities.
@@ -58,16 +58,16 @@ Ook de Teachbot kun ook in simulatie uitvoeren:
 
 
 ```bash
-ros2 launch teachbot_ros teachbot_rviz.launch.py target_config_file:=~/teachbot_ws/src/teachbot_ros/teachbot_ros/config/target_robots/ur.yaml
+ros2 launch teachbot_ros teachbot_rviz.launch.py target_config_file:=~/teachbot_ws/src/teachbot_ros/teachbot_ros/config/target_robots/ufLite6.yaml
 ```
-> Er zal een tweede RVIZ-monitor gestart worden met daarin een UR robot welke de stand van de Teachbot representeerd
+> Er zal een tweede RVIZ-monitor gestart worden met daarin een Teachbot device welke de stand van de Teachbot representeerd
 
 :::
 
 :::{tab-item} Simulatie
 
 ```bash
-ros2 launch teachbot_ros sim_teachbot_rviz.launch.py target_config_file:=~/teachbot_ws/src/teachbot_ros/teachbot_ros/config/target_robots/ur.yaml
+ros2 launch teachbot_ros sim_teachbot_rviz.launch.py target_config_file:=~/teachbot_ws/src/teachbot_ros/teachbot_ros/config/target_robots/ufLite6.yaml
 ```
 
 :::
