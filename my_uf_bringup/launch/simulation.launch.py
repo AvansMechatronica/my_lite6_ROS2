@@ -123,10 +123,31 @@ def launch_setup(context, *args, **kwargs):
         }.items(),
     )
 
+    # move_group launch
+    movegroup_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution([FindPackageShare('my_uf_bringup'), 'launch', 'movegroup.launch.py'])
+        ),
+        launch_arguments={
+            'dof': dof,
+            'robot_type': robot_type,
+            'prefix': prefix,
+            'hw_ns': hw_ns,
+            'limited': limited,
+            'attach_to': attach_to,
+            'attach_xyz': attach_xyz,
+            'attach_rpy': attach_rpy,
+            'add_gripper': add_gripper,
+            'add_vacuum_gripper': add_vacuum_gripper,
+            'add_bio_gripper': add_bio_gripper,
+            'launch_rviz': 'true',
+        }.items(),
+    )
+
 
     return [
         robot_gazebo_launch,
-        #robot_moveit_common_launch,
+        movegroup_launch,
     ]
 
 

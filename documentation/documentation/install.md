@@ -81,6 +81,20 @@ colcon build --symlink-install --packages-select <package_name>
 source install/setup.bash
 ```
 
+## Toevoegen van de `install/setup.bash` aan `.bashrc`
+Om te voorkomen dat je ieder keer de workspace `my_uf_ws` moet sourcen wordt de `install/setup.bash` toegevoegd aan `.bashrc` (dit (verborgen)bestand bevindt zich in de `$HOME` directory)
+Je kunt het volgende script toepassen:
+
+```bash
+# Add source command to .bashrc if it doesn't already exist
+if ! grep -Fxq "source $(pwd)/install/setup.bash" ~/.bashrc; then
+    echo "source $(pwd)/install/setup.bash" >> ~/.bashrc
+    echo "Added source command to .bashrc"
+else
+    echo "Source command already exists in .bashrc"
+fi  
+```
+
 ## Testen van de installatie
 Je kunt de installatie testen door onderstaand commando. Je hebt hiervoor geen fysieke robot of simulatie omgeving nodig.
 
