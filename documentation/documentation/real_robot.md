@@ -94,6 +94,8 @@ Bij gebruik van virtuele-machine op development-computer, dient het netwerk als 
 Als dit niet het geval is click dan op het Network Adapter icoontje en selecteer `Settings`. Selecteer in het keuzemenu de optie `Bridged`
 
 ![image](../images/vmware2.png)
+
+Let op: Als je in de `bridged` mode staat kun je waarschijnlijk niet met internet communiceren(b.v. om ROS-packages te downloaden, internet-browser of github gebruiken) dien je weer terug te schakelen naar 'NAT' mode.
 :::
 
 ### Netwerkconfiguratie development-computer testen
@@ -115,11 +117,30 @@ Controleer of het ip-adres in het juiste subnet opgenomen is `192.168.1.x`
 ### Configuratie uFactory Lite robot
 Verbind de uFactory Lite robot met het netwerk van de router met een `cat5-kabel` en voer de volgende handelingen uit op de teachpendant van de uFactory Lite robot
 
-### Opvragen IP-adres van de uFactory Lite robot
+### Opvragen IP-adres van de uFactory Lite6 robot
 Op de achterzijde van de uFactory Lite robot bevindt zich een sticker met daarop het serienummer van de robot. Op deze sticker staat ook het IP-adres van de robot vermeld. Noteer dit IP-adres, deze heb je later nodig.
+
+## Testen communicatie met uFactory Lite6 robot
+Je kunt de communicatie met de robot testen met het volgende commando:
+```bash
+ping <ip-address-robot>
+```
+
+Het resultaat moet dan hier op lijken
+```text
+PING <ip-address-robot> (<ip-address-robot>) 56(84) bytes of data.
+64 bytes from <ip-address-robot>: icmp_seq=1 ttl=64 time=0.030 ms
+64 bytes from <ip-address-robot>: icmp_seq=2 ttl=64 time=0.041 ms
+64 bytes from <ip-address-robot>: icmp_seq=3 ttl=64 time=0.040 ms
+^C
+--- <ip-address-robot> ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2069ms
+
+```
 
 
 ## Starten van de robot
+
 
 ```
 ros2 launch my_uf_bringup real_robot.launch.py robot_ip:=<robot_ip>

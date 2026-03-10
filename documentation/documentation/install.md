@@ -60,7 +60,7 @@ Met onderstaand commando worden alle benodigde software voor de template geinsta
 
 ```bash
 cd ~/my_uf_ws/src/my_ufactory_ROS2/install
-./install
+./install.bash
 ```
 
 ## Bouwen van de workspace
