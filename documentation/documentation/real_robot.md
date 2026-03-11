@@ -123,21 +123,20 @@ Op de achterzijde van de uFactory Lite robot bevindt zich een sticker met daarop
 ## Testen communicatie met uFactory Lite6 robot
 Je kunt de communicatie met de robot testen met het volgende commando:
 ```bash
-ping <ip-address-robot>
+ping <robot-ip>
 ```
 
 Het resultaat moet dan hier op lijken
 ```text
-PING <ip-address-robot> (<ip-address-robot>) 56(84) bytes of data.
-64 bytes from <ip-address-robot>: icmp_seq=1 ttl=64 time=0.030 ms
-64 bytes from <ip-address-robot>: icmp_seq=2 ttl=64 time=0.041 ms
-64 bytes from <ip-address-robot>: icmp_seq=3 ttl=64 time=0.040 ms
+PING <robot-ip> (<robot-ip>) 56(84) bytes of data.
+64 bytes from <robot-ip>: icmp_seq=1 ttl=64 time=0.030 ms
+64 bytes from <robot-ip>: icmp_seq=2 ttl=64 time=0.041 ms
+64 bytes from <robot-ip>: icmp_seq=3 ttl=64 time=0.040 ms
 ^C
---- <ip-address-robot> ping statistics ---
+--- <robot-ip> ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2069ms
 
 ```
-
 
 ## Starten van de robot
 
