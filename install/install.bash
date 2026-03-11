@@ -3,11 +3,15 @@ sudo apt update
 sudo apt -y install ros-$ROS_DISTRO-moveit
 sudo apt -y install ros-$ROS_DISTRO-joint-state-publisher-gui
 sudo apt -y install ros-$ROS_DISTRO-combined-robot-hw
+sudo apt -y install ros-$ROS_DISTRO-ros2-control
+sudo apt -y install ros-$ROS_DISTRO-ros2-controllers
 sudo apt -y install ros-$ROS_DISTRO-moveit-servo
 sudo apt -y install ros-$ROS_DISTRO-moveit-visual-tools
 sudo apt -y install ros-$ROS_DISTRO-ros-controllers
 sudo apt -y install ros-$ROS_DISTRO-controller-manager
+sudo apt -y install ros-$ROS_DISTRO-controller-interface
 sudo apt -y install ros-$ROS_DISTRO-controller-manager-msgs
+sudo apt -y install ros-$ROS_DISTRO-gz-ros2-control
 sudo apt -y install ros-$ROS_DISTRO-tf-transformations
 
 CURRENT_DIR=$(pwd)
