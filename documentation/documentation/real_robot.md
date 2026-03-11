@@ -150,7 +150,7 @@ Volg de output in de terminal en evalueer of er een goede connectie met de robot
 RVIZ zal nu worden opgestart en een virtuele weergave van de robot-opstelling wordt nu zichtbaar. 
 De stand van de robot in de virtuele wereld moet overeen komen met de stand van de uFactory Lite robot.
 
->Je kunt ook in het bestand /<workspace>/src/my_ufactory_ROS2/my_uf_bringup/launch/real_robot.launch.py het ip-adres wijzigen op regel 23.Daarna hoef je de robot_ip argument niet meer aan bovenstaande commando toe te voegen.
+>Je kunt ook in het bestand `/<workspace>/src/my_ufactory_ROS2/my_uf_bringup/launch/real_robot.launch.py` het ip-adres wijzigen op regel 23.Daarna hoef je de robot_ip argument niet meer aan bovenstaande commando toe te voegen.
 
 ## Testen van de robot
 Je kunt de robot nu laten bewegen door de ` movegroup`.
