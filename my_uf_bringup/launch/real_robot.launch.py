@@ -23,6 +23,7 @@ def launch_setup(context, *args, **kwargs):
     robot_ip = LaunchConfiguration('robot_ip', default='192.168.1.164')
     dof = LaunchConfiguration('dof', default=6)
     robot_type = LaunchConfiguration('robot_type', default='lite')
+    report_type = LaunchConfiguration('report_type', default='normal')
     prefix = LaunchConfiguration('prefix', default='')
     hw_ns = LaunchConfiguration('hw_ns', default='xarm')
     limited = LaunchConfiguration('limited', default=True)
@@ -30,7 +31,7 @@ def launch_setup(context, *args, **kwargs):
     attach_xyz = LaunchConfiguration('attach_xyz', default='"0 0 0"')
     attach_rpy = LaunchConfiguration('attach_rpy', default='"0 0 0"')
    
-    add_gripper = LaunchConfiguration('add_gripper', default=False)
+    add_gripper = LaunchConfiguration('add_gripper', default=True)
     add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper', default=True)
     add_bio_gripper = LaunchConfiguration('add_bio_gripper', default=False)
     
@@ -49,8 +50,10 @@ def launch_setup(context, *args, **kwargs):
     )
 
     pkg_path = os.path.join(get_package_share_directory('my_uf_moveit_config'))
+    bringup_pkg_path = get_package_share_directory('my_uf_bringup')
     urdf_file = os.path.join(pkg_path, 'config', 'lite6_robot.urdf.xacro')
     srdf_file = os.path.join(pkg_path, 'config', 'lite6_robot.srdf')
+    extra_robot_api_params_path = os.path.join(bringup_pkg_path, 'config', 'xarm_api_params.yaml')
 
     controllers_file = os.path.join(pkg_path, 'config', 'controllers.yaml')
     joint_limits_file = os.path.join(pkg_path, 'config', 'joint_limits.yaml')
@@ -130,6 +133,22 @@ def launch_setup(context, *args, **kwargs):
         }.items(),
     )
 
+    robot_driver_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(PathJoinSubstitution([FindPackageShare('xarm_api'), 'launch', '_robot_driver.launch.py'])),
+        launch_arguments={
+            'robot_ip': robot_ip,
+            'report_type': report_type,
+            'dof': dof,
+            'hw_ns': hw_ns,
+            'prefix': prefix,
+            'add_gripper': add_gripper,
+            'add_vacuum_gripper': add_vacuum_gripper,
+            'add_bio_gripper': add_bio_gripper,
+            'robot_type': robot_type,
+            'extra_robot_api_params_path': extra_robot_api_params_path,
+        }.items(),
+    )
+
     controllers = [
         '{}{}_traj_controller'.format(prefix.perform(context), xarm_type),
     ]
@@ -170,6 +189,7 @@ def launch_setup(context, *args, **kwargs):
         robot_moveit_common_launch,
         joint_state_publisher_node,
         ros2_control_launch,
+        robot_driver_launch,
         static_traansfer_frame,
     ] + controller_nodes
 

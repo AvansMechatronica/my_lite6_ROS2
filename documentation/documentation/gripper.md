@@ -12,3 +12,12 @@ ros2 service list
 Je zult een service zien met de naam `/xarm/set_vacuum_gripper`. Deze service kan worden gebruikt om de gripper te openen of te sluiten.
 
 Met deze kun je zowel een parallelle gripper als een vacuüm gripper aansturen. 
+
+## Commandline
+```bash
+ros2 service call /xarm/set_vacuum_gripper xarm_msgs/srv/VacuumGripperCtrl "{'on': false}"
+```
+
+```bash
+ros2 service call /xarm/set_vacuum_gripper xarm_msgs/srv/VacuumGripperCtrl "{'on': true}"
+```

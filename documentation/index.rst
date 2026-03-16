@@ -24,6 +24,7 @@ Welkom bij de uFactory Lite6 Template Repository
    documentation/virtual_environment.md
    documentation/demo_programms.md
    documentation/gripper.md
+   documentation/ros_services.md
    documentation/teachbot.md
    documentation/troubleshooting.md
    documentation/faq.md
