@@ -20,8 +20,16 @@ def generate_launch_description():
         'view_robot.rviz'
     )
 
+    urdf_file = LaunchConfiguration('urdf_file')
+    add_gripper = LaunchConfiguration('add_gripper')
+    add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper')
+
     # Define the robot description using xacro command
-    robot_description = Command(['xacro ', urdf_file_path])
+    robot_description = Command([
+        'xacro ', urdf_file,
+        ' add_gripper:=', add_gripper,
+        ' add_vacuum_gripper:=', add_vacuum_gripper,
+    ])
 
     return LaunchDescription([
         # Declare URDF file argument
@@ -29,6 +37,16 @@ def generate_launch_description():
             'urdf_file',
             default_value=urdf_file_path,
             description='Full path to the URDF file to load'
+        ),
+        DeclareLaunchArgument(
+            'add_gripper',
+            default_value='true',
+            description='Enable standard gripper in robot description'
+        ),
+        DeclareLaunchArgument(
+            'add_vacuum_gripper',
+            default_value='false',
+            description='Enable vacuum gripper in robot description'
         ),
         
         # Set robot description parameter

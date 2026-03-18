@@ -4,7 +4,6 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /RobotModel1
         - /RobotModel1/Description Topic1
       Splitter Ratio: 0.5
     Tree Height: 324
@@ -111,7 +110,16 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          link_tcp:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           mountingplate_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          uflite_gripper_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -214,7 +222,16 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          link_tcp:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           mountingplate_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          uflite_gripper_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -233,57 +250,21 @@ Visualization Manager:
       Value: true
       Velocity_Scaling_Factor: 0.1
     - Class: rviz_default_plugins/TF
-      Enabled: true
+      Enabled: false
       Filter (blacklist): ""
       Filter (whitelist): ""
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        baseplate_link:
-          Value: false
-        link1:
-          Value: false
-        link2:
-          Value: false
-        link3:
-          Value: false
-        link4:
-          Value: false
-        link5:
-          Value: false
-        link6:
-          Value: false
-        link_base:
-          Value: true
-        link_eef:
-          Value: true
-        mountingplate_link:
-          Value: false
-        world:
-          Value: false
-        xarm_link:
-          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: false
       Tree:
-        world:
-          baseplate_link:
-            mountingplate_link:
-              xarm_link:
-                link_base:
-                  link1:
-                    link2:
-                      link3:
-                        link4:
-                          link5:
-                            link6:
-                              link_eef:
-                                {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
     - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Collision Enabled: false
@@ -346,7 +327,16 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        link_tcp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         mountingplate_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        uflite_gripper_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -425,10 +415,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.33000028133392334
+      Pitch: 0.3900001049041748
       Target Frame: world
       Value: Orbit (rviz_default_plugins)
-      Yaw: 5.225212097167969
+      Yaw: 5.425215721130371
     Saved: ~
 Window Geometry:
   Displays:
@@ -447,4 +437,4 @@ Window Geometry:
     collapsed: false
   Width: 1200
   X: 68
-  Y: 0
+  Y: 32

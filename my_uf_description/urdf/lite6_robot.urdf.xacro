@@ -7,8 +7,8 @@
   <xacro:arg name="limited" default="false"/>
   <xacro:arg name="effort_control" default="false"/>
   <xacro:arg name="velocity_control" default="false"/>
-  <xacro:arg name="add_gripper" default="false"/>
-  <xacro:arg name="add_vacuum_gripper" default="true"/>
+  <xacro:arg name="add_gripper" default="true"/>
+  <xacro:arg name="add_vacuum_gripper" default="false"/>
   <xacro:arg name="model1300" default="false"/>
   
   <xacro:arg name="dof" default="6"/>
@@ -56,6 +56,8 @@
                      limited="$(arg limited)" 
                      effort_control="$(arg effort_control)"
                      velocity_control="$(arg velocity_control)"
+                     add_gripper="$(arg add_gripper)"
+                     add_vacuum_gripper="$(arg add_vacuum_gripper)"
                      dof="$(arg dof)"
                      ros2_control_plugin="$(arg ros2_control_plugin)"
                      robot_type="$(arg robot_type)" 
