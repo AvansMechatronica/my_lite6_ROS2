@@ -20,8 +20,8 @@ def generate_launch_description():
     moveit_config = (
         MoveItConfigsBuilder(
             context=None,
-            dof=6,
-            robot_type='lite',
+            dof=5,
+            robot_type='xarm',
             prefix='',
             limited=True,
         )

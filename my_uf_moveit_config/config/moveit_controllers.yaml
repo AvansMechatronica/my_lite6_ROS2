@@ -24,7 +24,7 @@
           - joint3
           - joint4
           - joint5
-          - joint6
+
 
       scaled_joint_trajectory_controller:
         action_ns: follow_joint_trajectory
@@ -36,4 +36,3 @@
           - joint3
           - joint4
           - joint5
-          - joint6

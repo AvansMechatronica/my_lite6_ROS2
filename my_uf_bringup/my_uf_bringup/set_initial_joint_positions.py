@@ -30,14 +30,13 @@ class InitialJointPositionSetter(Node):
         goal_time_sec = self.get_parameter('goal_time_sec').get_parameter_value().integer_value
         max_retries = self.get_parameter('max_retries').get_parameter_value().integer_value
 
-        self.base_joint_names = ['joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6']
+        self.base_joint_names = ['joint1', 'joint2', 'joint3', 'joint4', 'joint5']
         self.default_target_positions = {
             'joint1': 0.0,
             'joint2': 0.0,
             'joint3': -0.25 * math.pi,
             'joint4': 0.0,
             'joint5': 0.25 * math.pi,
-            'joint6': 0.0,
         }
         loaded_positions = self._load_initial_positions(initial_positions_file)
         self.target_positions = [

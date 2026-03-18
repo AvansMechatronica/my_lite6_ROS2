@@ -20,7 +20,7 @@ from uf_ros_lib.uf_robot_utils import generate_ros2_control_params_temp_file
 
 
 def launch_setup(context, *args, **kwargs):
-    dof = LaunchConfiguration('dof', default=6)
+    dof = LaunchConfiguration('dof', default=5)
     robot_type = LaunchConfiguration('robot_type', default='xarm')
     prefix = LaunchConfiguration('prefix', default='')
     limited = LaunchConfiguration('limited', default=True)

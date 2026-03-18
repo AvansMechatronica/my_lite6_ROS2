@@ -20,7 +20,6 @@ uf_traj_controller:
       - joint3
       - joint4
       - joint5
-      - joint6
     command_interfaces:
       - position
     state_interfaces:

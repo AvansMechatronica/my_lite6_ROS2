@@ -1,13 +1,7 @@
-trajectory_execution:
-  allowed_execution_duration_scaling: 1.2
-  allowed_goal_duration_margin: 0.5
-  allowed_start_tolerance: 0.2
-  execution_duration_monitoring: false
-
 controller_names:
-  - uf_traj_controller
+  - xarm5_traj_controller
 
-uf_traj_controller:
+xarm5_traj_controller:
   action_ns: follow_joint_trajectory
   type: FollowJointTrajectory
   default: true
@@ -17,5 +11,3 @@ uf_traj_controller:
     - joint3
     - joint4
     - joint5
-    - joint6
-    

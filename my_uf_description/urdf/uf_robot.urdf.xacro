@@ -11,7 +11,7 @@
   <xacro:arg name="add_vacuum_gripper" default="false"/>
   <xacro:arg name="model1300" default="false"/>
   
-  <xacro:arg name="dof" default="6"/>
+  <xacro:arg name="dof" default="5"/>
   <xacro:arg name="robot_ip" default=""/>
   <xacro:arg name="robot_type" default="xarm"/>
   <xacro:arg name="robot_sn" default=""/>
@@ -134,20 +134,17 @@
       <!--<origin xyz="0.35 0.5 0.0" />-->
       <xacro:box_inertia m="20" x="0.7" y="1.1" z="0.03"/>
     </inertial>
-    <!--
     <collision>
       <origin xyz="0 0 0.0" />
       <geometry>
         <box size="0.7 1.1 0.03" />
       </geometry>
     </collision>
-    -->
   </link>
 
   <!-- dit is niet juist parent en child zijn omgedraaid -->
   <joint name="baseplate_joint" type="fixed">
-    <!--<origin xyz="0 0 0.015" /> -->
-      <origin xyz="0 0 -1.0" />
+    <origin xyz="0 0 0.015" />
     <parent link="world" />
     <child link="baseplate_link" />
   </joint>
@@ -156,7 +153,7 @@
     <visual>
       <origin xyz="0 0 0.0" />
       <geometry>
-        <box size="0.130 0.190 0.005" />
+        <box size="0.130 0.190 0.100" />
       </geometry>
       <material name="red"/>
     </visual>
@@ -172,8 +169,8 @@
   </link>
 
   <joint name="mountingplate_joint" type="fixed">
-    <origin xyz="-0.285 0.0 0.0175" />
-    <parent link="world" />
+    <origin xyz="-0.285 0.0 0.065" />
+    <parent link="baseplate_link" />
     <child link="mountingplate_link" />
   </joint>
 
@@ -181,8 +178,7 @@
   <link name="xarm_link">
   </link >
   <joint name="base_plate_to_xarm_joint" type="fixed">
-    <!--<origin xyz="-0.0 0.0 0.0025" />-->
-    <origin xyz="-0.0 0.0 0.5" />
+    <origin xyz="-0.0 0.0 0.05" />
     <parent link="mountingplate_link" />
     <child link="xarm_link" />
   </joint>

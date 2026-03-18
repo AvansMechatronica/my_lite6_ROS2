@@ -50,7 +50,7 @@ def generate_launch_description():
                         {'zeros.robot1_joint3': -1.57},
                         {'zeros.robot1_joint4': 0.0},
                         {'zeros.robot1_joint5': 0.785},
-                        {'zeros.robot1_joint6': 0.0},         
+       
             ],
         ),
         

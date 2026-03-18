@@ -20,7 +20,7 @@ from uf_ros_lib.uf_robot_utils import generate_ros2_control_params_temp_file
 
 
 def launch_setup(context, *args, **kwargs):
-    dof = LaunchConfiguration('dof', default=6)
+    dof = LaunchConfiguration('dof', default=5)
     robot_type = LaunchConfiguration('robot_type', default='xarm')
     prefix = LaunchConfiguration('prefix', default='')
     hw_ns = LaunchConfiguration('hw_ns', default='xarm')
@@ -29,9 +29,9 @@ def launch_setup(context, *args, **kwargs):
     attach_xyz = LaunchConfiguration('attach_xyz', default='"0 0 0.0"')
     attach_rpy = LaunchConfiguration('attach_rpy', default='"0 0 0"')
 
-    add_gripper = LaunchConfiguration('add_gripper', default=True)
-    add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper', default=False)
-    add_bio_gripper = LaunchConfiguration('add_bio_gripper', default=False)
+    add_gripper = LaunchConfiguration('add_gripper', default='false')
+    add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper', default='false')
+    add_bio_gripper = LaunchConfiguration('add_bio_gripper', default='false')
 
     ros_namespace = LaunchConfiguration('ros_namespace', default='').perform(context)
 
@@ -45,7 +45,7 @@ def launch_setup(context, *args, **kwargs):
         add_gripper=add_gripper.perform(context) in ('True', 'true'),
         add_bio_gripper=add_bio_gripper.perform(context) in ('True', 'true'),
         ros_namespace=ros_namespace,
-        update_rate=1000,
+        update_rate=100,
         use_sim_time=True,
         robot_type=robot_type.perform(context)
     )
