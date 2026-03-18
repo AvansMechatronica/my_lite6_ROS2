@@ -1,14 +1,14 @@
-# Installatie van de uFactory Lite6-template
+# Installatie van de uFactory uf-template
 
 Hier wordt beschreven hoe je de template kunt verkrijgen, kunt bouwen en tenslotte kunt testen.
 
 ## Development computer
 Als in dit document gesproken wordt over een development-computer dan wordt hiermee bedoeld de laptop/computer waarop je de software in ROS2 ontwikkelt.
 
-## Cloning de ROS2 uFactory Lite6 template
-Voor het maken van de ROS2 uFactory Lite6 template maak je gebruik van een Github repository. Je kunt er voor kiezen om deze clone onder een eigen account van Github te plaatsen (1e keuze hieronder). Je kunt daarna eenvoudig backup's van je werk maken naar je eigen Github account.
+## Cloning de ROS2 uFactory uf template
+Voor het maken van de ROS2 uFactory uf template maak je gebruik van een Github repository. Je kunt er voor kiezen om deze clone onder een eigen account van Github te plaatsen (1e keuze hieronder). Je kunt daarna eenvoudig backup's van je werk maken naar je eigen Github account.
 
-> we maken gebruik van een prefix `my_ur` in de packages van de repository om onderscheid te maken met de standaard uFactory Lite6 packages.
+> we maken gebruik van een prefix `my_ur` in de packages van de repository om onderscheid te maken met de standaard uFactory uf packages.
 
 :::::{card} 
 
@@ -55,7 +55,7 @@ git clone https://github.com/AvansMechatronica/my_ufactory_ROS2.git
 
 
 
-## Installatie van uFactory Lite6 Robot support packages
+## Installatie van uFactory uf Robot support packages
 Met onderstaand commando worden alle benodigde software voor de template geinstalleerd en de workspace gebouwd met colcon.
 
 ```bash

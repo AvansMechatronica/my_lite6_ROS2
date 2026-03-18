@@ -3,7 +3,7 @@
 ![image](../images/Logo_TOS_blauw.svg)
 **TeleOperation Services B.V.**
 
-Met de TOS-Teachbot kun je met een teleoperatie de joints van de uFactory Lite6 robot bewegen.
+Met de TOS-Teachbot kun je met een teleoperatie de joints van de uFactory uf robot bewegen.
 
 ![inmage](../images/teachbot.png)   
 
@@ -58,7 +58,7 @@ Ook de Teachbot kun ook in simulatie uitvoeren:
 
 
 ```bash
-ros2 launch teachbot_ros teachbot_rviz.launch.py target_config_file:=~/teachbot_ws/src/teachbot_ros/teachbot_ros/config/target_robots/ufLite6.yaml
+ros2 launch teachbot_ros teachbot_rviz.launch.py target_config_file:=~/teachbot_ws/src/teachbot_ros/teachbot_ros/config/target_robots/uf.yaml
 ```
 > Er zal een tweede RVIZ-monitor gestart worden met daarin een Teachbot device welke de stand van de Teachbot representeerd
 
@@ -67,7 +67,7 @@ ros2 launch teachbot_ros teachbot_rviz.launch.py target_config_file:=~/teachbot_
 :::{tab-item} Simulatie
 
 ```bash
-ros2 launch teachbot_ros sim_teachbot_rviz.launch.py target_config_file:=~/teachbot_ws/src/teachbot_ros/teachbot_ros/config/target_robots/ufLite6.yaml
+ros2 launch teachbot_ros sim_teachbot_rviz.launch.py target_config_file:=~/teachbot_ws/src/teachbot_ros/teachbot_ros/config/target_robots/uf.yaml
 ```
 
 :::

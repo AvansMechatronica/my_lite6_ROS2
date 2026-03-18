@@ -1,4 +1,4 @@
-lite6:
+uf:
   default_planner_config: RRT
   planner_configs:
     - SBL

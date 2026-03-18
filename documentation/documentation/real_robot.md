@@ -117,10 +117,10 @@ Controleer of het ip-adres in het juiste subnet opgenomen is `192.168.1.x`
 ### Configuratie uFactory Lite robot
 Verbind de uFactory Lite robot met het netwerk van de router met een `cat5-kabel` en voer de volgende handelingen uit op de teachpendant van de uFactory Lite robot
 
-### Opvragen IP-adres van de uFactory Lite6 robot
+### Opvragen IP-adres van de uFactory uf robot
 Op de achterzijde van de uFactory Lite robot bevindt zich een sticker met daarop het serienummer van de robot. Op deze sticker staat ook het IP-adres van de robot vermeld. Noteer dit IP-adres, deze heb je later nodig.
 
-## Testen communicatie met uFactory Lite6 robot
+## Testen communicatie met uFactory uf robot
 Je kunt de communicatie met de robot testen met het volgende commando:
 ```bash
 ping <robot-ip>

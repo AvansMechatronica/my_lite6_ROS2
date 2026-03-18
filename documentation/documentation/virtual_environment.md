@@ -5,7 +5,7 @@ De virtuele omgeving welke zichtbaar is in RVIZ of Gazebo is gemodelleerd in een
 Het URDF-bestand kun je hier vinden:
 
 ```bash
-~/<workspace>/src/my_ufactory_ROS2/my_uf_description/urdf/lite6_robot.urdf.xacro
+~/<workspace>/src/my_ufactory_ROS2/my_uf_description/urdf/uf_robot.urdf.xacro
 ```
 
 In dit bestand kun je virtuele elementen toevoegen aan je virtuele omgeving die overeenkomen met je fysieke robot-cel.

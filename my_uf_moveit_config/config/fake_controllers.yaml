@@ -1,7 +1,7 @@
 controller_names:
-  - lite6_traj_controller
+  - uf_traj_controller
 
-lite6_traj_controller:
+uf_traj_controller:
   action_ns: follow_joint_trajectory
   type: FollowJointTrajectory
   default: true

@@ -27,9 +27,9 @@ class manipulatorController(Node):
         ]
         self.base_link_name = "link_base"
         self.end_effector_name = "link6"
-        self.group_name = "lite6"
+        self.group_name = "uf"
         self.package_name = "my_uf_moveit_config"
-        self.srdf_file_name = "config/lite6_robot.srdf"
+        self.srdf_file_name = "config/uf_robot.srdf"
 
         # TF setup
         self.tf_buffer = Buffer()
@@ -45,7 +45,7 @@ class manipulatorController(Node):
 
         # --- Create subscribers, publishers, clients, timers here ---
 
-        self.get_logger().info("Lite6 demo node has been initialized.")
+        self.get_logger().info("uf demo node has been initialized.")
 
     # --- Create callback functions here ---
 

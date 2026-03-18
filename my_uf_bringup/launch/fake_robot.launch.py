@@ -48,8 +48,8 @@ def launch_setup(context, *args, **kwargs):
     )
 
     pkg_path = os.path.join(get_package_share_directory('my_uf_moveit_config'))
-    urdf_file = os.path.join(pkg_path, 'config', 'lite6_robot.urdf.xacro')
-    srdf_file = os.path.join(pkg_path, 'config', 'lite6_robot.srdf')
+    urdf_file = os.path.join(pkg_path, 'config', 'uf_robot.urdf.xacro')
+    srdf_file = os.path.join(pkg_path, 'config', 'uf_robot.srdf')
 
     controllers_file = os.path.join(pkg_path, 'config', 'controllers.yaml')
     joint_limits_file = os.path.join(pkg_path, 'config', 'joint_limits.yaml')

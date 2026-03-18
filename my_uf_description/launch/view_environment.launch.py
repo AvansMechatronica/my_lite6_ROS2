@@ -10,7 +10,7 @@ def generate_launch_description():
     urdf_file_path = os.path.join(
         get_package_share_directory('my_uf_description'),
         'urdf',
-        'lite6_robot.urdf.xacro'
+        'uf_robot.urdf.xacro'
     )
 
     # Define the path to the RViz configuration file within the package
@@ -44,7 +44,18 @@ def generate_launch_description():
             package='joint_state_publisher_gui',
             executable='joint_state_publisher_gui',
             name='joint_state_publisher_gui',
-            parameters=[{'use_gui': True}]
+            parameters=[{
+                'use_gui': True,
+                'source_list': ['joint_states'],
+                'zeros': {
+                    'joint1': 0.0,
+                    'joint2': 0.0,
+                    'joint3': -0.7853981633974483,  # -0.25 * pi
+                    'joint4': 0.0,
+                    'joint5': 0.7853981633974483,   # 0.25 * pi
+                    'joint6': 0.0
+                }
+            }]
         ),
         
         # RViz Node

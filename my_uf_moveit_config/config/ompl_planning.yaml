@@ -4,7 +4,7 @@ planning_plugin: ompl_interface/OMPLPlanner
 
 ompl:
   planning:
-    lite6:
+    uf:
       default_planner_config: RRTConnect
       planner_configs:
         - SBL

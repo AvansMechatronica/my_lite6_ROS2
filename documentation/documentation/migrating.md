@@ -4,5 +4,5 @@ Je kunt deze uFactory repository ook gebruiken voor andere uFactory-type robots,
 Je kunt deze template repository gebruiken als basis voor het configureren van een andere uFactory-type robot.
 
 :::{tip}
-Zorg ervoor dat je nieuwe configuratie unieke package-namen heeft, zodat er geen conflicten ontstaan met de configuratie van de uFactory Lite6 robot.
+Zorg ervoor dat je nieuwe configuratie unieke package-namen heeft, zodat er geen conflicten ontstaan met de configuratie van de uFactory uf robot.
 :::

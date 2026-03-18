@@ -24,18 +24,18 @@ int main(int argc, char ** argv)
     (void) argc;
     (void) argv;
 
-    printf("My uFactory Lite6 demo CPP\n");
+    printf("My uFactory uf demo CPP\n");
  
     rclcpp::init(argc, argv);
     
-    auto move_group_node = rclcpp::Node::make_shared("uf_lite6_demo_node", rclcpp::NodeOptions().automatically_declare_parameters_from_overrides(true));
+    auto move_group_node = rclcpp::Node::make_shared("uf_uf_demo_node", rclcpp::NodeOptions().automatically_declare_parameters_from_overrides(true));
     
     // Load robot description from file if not provided as parameter
     // Dit is een warop. Op enige wijze kan de param list niet worden gezien door de demo node
     if (!move_group_node->has_parameter("robot_description_semantic")) {
         try {
             std::string pkg_path = ament_index_cpp::get_package_share_directory("my_uf_moveit_config");
-            std::string srdf_path = pkg_path + "/config/lite6_robot.srdf";
+            std::string srdf_path = pkg_path + "/config/uf_robot.srdf";
             
             std::ifstream srdf_file(srdf_path);
             if (srdf_file.is_open()) {
@@ -62,7 +62,7 @@ int main(int argc, char ** argv)
     // MoveIt operates on sets of joints called "planning groups" and stores them in an object called
     // the ``JointModelGroup``. Throughout MoveIt, the terms "planning group" and "joint model group"
     // are used interchangeably.
-    static const std::string PLANNING_GROUP = "lite6";
+    static const std::string PLANNING_GROUP = "uf";
 
  
  

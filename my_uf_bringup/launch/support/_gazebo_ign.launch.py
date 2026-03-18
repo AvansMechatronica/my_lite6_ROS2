@@ -75,7 +75,7 @@ def launch_setup(context, *args, **kwargs):
         executable='create',
         output='screen',
         arguments=[
-            '-name', 'lite6_robot',
+            '-name', 'uf_robot',
             '-string', robot_description_content,
             '-x', '0',
             '-y', '0',
