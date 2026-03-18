@@ -134,17 +134,20 @@
       <!--<origin xyz="0.35 0.5 0.0" />-->
       <xacro:box_inertia m="20" x="0.7" y="1.1" z="0.03"/>
     </inertial>
+    <!--
     <collision>
       <origin xyz="0 0 0.0" />
       <geometry>
         <box size="0.7 1.1 0.03" />
       </geometry>
     </collision>
+    -->
   </link>
 
   <!-- dit is niet juist parent en child zijn omgedraaid -->
   <joint name="baseplate_joint" type="fixed">
-    <origin xyz="0 0 0.015" />
+    <!--<origin xyz="0 0 0.015" /> -->
+      <origin xyz="0 0 -1.0" />
     <parent link="world" />
     <child link="baseplate_link" />
   </joint>
@@ -170,7 +173,7 @@
 
   <joint name="mountingplate_joint" type="fixed">
     <origin xyz="-0.285 0.0 0.0175" />
-    <parent link="baseplate_link" />
+    <parent link="world" />
     <child link="mountingplate_link" />
   </joint>
 
@@ -178,7 +181,8 @@
   <link name="xarm_link">
   </link >
   <joint name="base_plate_to_xarm_joint" type="fixed">
-    <origin xyz="-0.0 0.0 0.0025" />
+    <!--<origin xyz="-0.0 0.0 0.0025" />-->
+    <origin xyz="-0.0 0.0 0.5" />
     <parent link="mountingplate_link" />
     <child link="xarm_link" />
   </joint>

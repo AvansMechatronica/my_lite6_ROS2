@@ -27,6 +27,7 @@ setup(
     #tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'set_initial_joint_positions = my_uf_bringup.set_initial_joint_positions:main',
         ],
     },
 )

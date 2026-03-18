@@ -21,7 +21,7 @@ from uf_ros_lib.uf_robot_utils import generate_ros2_control_params_temp_file
 
 def launch_setup(context, *args, **kwargs):
     dof = LaunchConfiguration('dof', default=6)
-    robot_type = LaunchConfiguration('robot_type', default='lite')
+    robot_type = LaunchConfiguration('robot_type', default='xarm')
     prefix = LaunchConfiguration('prefix', default='')
     limited = LaunchConfiguration('limited', default=True)
     #attach_to = LaunchConfiguration('attach_to', default='base_link')
@@ -29,7 +29,7 @@ def launch_setup(context, *args, **kwargs):
     attach_xyz = LaunchConfiguration('attach_xyz', default='"0 0 0.0"')
     attach_rpy = LaunchConfiguration('attach_rpy', default='"0 0 0"')
 
-    add_gripper = LaunchConfiguration('add_gripper', default=False)
+    add_gripper = LaunchConfiguration('add_gripper', default=True)
     add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper', default=False)
     add_bio_gripper = LaunchConfiguration('add_bio_gripper', default=False)
 

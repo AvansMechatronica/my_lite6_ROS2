@@ -42,6 +42,11 @@ def launch_setup(context, *args, **kwargs):
     moveit_config_dict = yaml.load(moveit_config_dump, Loader=yaml.FullLoader) if moveit_config_dump else {}
     moveit_config_package_name = 'my_uf_bringup'
     xarm_type = '{}{}'.format(robot_type.perform(context), dof.perform(context) if robot_type.perform(context) in ('xarm', 'lite') else '')
+    initial_positions_file = os.path.join(
+        get_package_share_directory('my_uf_moveit_config'),
+        'config',
+        'initial_positions.yaml'
+    )
     
     robot_description = {'robot_description': moveit_config_dict['robot_description']}
     robot_description_content = moveit_config_dict.get('robot_description', '')
@@ -112,9 +117,11 @@ def launch_setup(context, *args, **kwargs):
         ]
     )
     # Load controllers
+    joint_state_broadcaster_name = 'joint_state_broadcaster'
+    trajectory_controller_name = '{}uf_traj_controller'.format(prefix.perform(context))
     controllers = [
-        'joint_state_broadcaster',
-        '{}{}_traj_controller'.format(prefix.perform(context), xarm_type),
+        joint_state_broadcaster_name,
+        trajectory_controller_name,
     ]
     if robot_type.perform(context) != 'lite' and add_gripper.perform(context) in ('True', 'true'):
         controllers.append('{}{}_gripper_traj_controller'.format(prefix.perform(context), robot_type.perform(context)))
@@ -122,9 +129,10 @@ def launch_setup(context, *args, **kwargs):
         controllers.append('{}bio_gripper_traj_controller'.format(prefix.perform(context)))
     
     controller_nodes = []
+    joint_state_spawner_node = None
     if load_controller.perform(context) in ('True', 'true'):
         for controller in controllers:
-            controller_nodes.append(Node(
+            controller_node = Node(
                 package='controller_manager',
                 executable='spawner',
                 output='screen',
@@ -133,7 +141,26 @@ def launch_setup(context, *args, **kwargs):
                     '--controller-manager', '{}/controller_manager'.format(ros_namespace)
                 ],
                 parameters=[{'use_sim_time': True}],
-            ))
+            )
+            controller_nodes.append(controller_node)
+            if controller == joint_state_broadcaster_name:
+                joint_state_spawner_node = controller_node
+
+    # Node to set initial joint positions after controllers are loaded
+    set_initial_positions_node = Node(
+        package='my_uf_bringup',
+        executable='set_initial_joint_positions',
+        output='screen',
+        parameters=[{
+            'use_sim_time': True,
+            'prefix': prefix.perform(context),
+            'ros_namespace': ros_namespace,
+            'controller_name': trajectory_controller_name,
+            'initial_positions_file': initial_positions_file,
+            'goal_time_sec': 3,
+            'max_retries': 3,
+        }],
+    )
 
     # Clock bridge
     clock_bridge = Node(package='ros_gz_bridge', executable='parameter_bridge',
@@ -164,6 +191,17 @@ def launch_setup(context, *args, **kwargs):
     # Add controllers if requested
     if len(controller_nodes) > 0:
         nodes_to_launch.extend(controller_nodes)
+        if joint_state_spawner_node is not None:
+            nodes_to_launch.append(
+                RegisterEventHandler(
+                    OnProcessExit(
+                        target_action=joint_state_spawner_node,
+                        on_exit=[set_initial_positions_node]
+                    )
+                )
+            )
+        else:
+            nodes_to_launch.append(set_initial_positions_node)
     
     return nodes_to_launch
 
