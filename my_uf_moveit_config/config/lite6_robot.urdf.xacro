@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="lite6_robot">
-    <!-- Import lite6_robot urdf file -->
-    <xacro:include filename="$(find my_uf_description)/urdf/lite6_robot.urdf.xacro" />
-
-</robot>

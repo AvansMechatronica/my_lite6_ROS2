@@ -51,8 +51,8 @@ def launch_setup(context, *args, **kwargs):
 
     pkg_path = os.path.join(get_package_share_directory('my_uf_moveit_config'))
     bringup_pkg_path = get_package_share_directory('my_uf_bringup')
-    urdf_file = os.path.join(pkg_path, 'config', 'lite6_robot.urdf.xacro')
-    srdf_file = os.path.join(pkg_path, 'config', 'lite6_robot.srdf')
+    urdf_file = os.path.join(pkg_path, 'config', 'uf_robot.urdf.xacro')
+    srdf_file = os.path.join(pkg_path, 'config', 'uf_robot.srdf')
     extra_robot_api_params_path = os.path.join(bringup_pkg_path, 'config', 'xarm_api_params.yaml')
 
     controllers_file = os.path.join(pkg_path, 'config', 'controllers.yaml')

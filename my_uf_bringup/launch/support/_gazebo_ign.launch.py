@@ -75,7 +75,7 @@ def launch_setup(context, *args, **kwargs):
         executable='create',
         output='screen',
         arguments=[
-            '-name', 'lite6_robot',
+            '-name', 'uf_robot',
             '-string', robot_description_content,
             '-x', '0',
             '-y', '0',
@@ -114,7 +114,7 @@ def launch_setup(context, *args, **kwargs):
     # Load controllers
     controllers = [
         'joint_state_broadcaster',
-        '{}{}_traj_controller'.format(prefix.perform(context), xarm_type),
+        '{}uf_traj_controller'.format(prefix.perform(context)),
     ]
     if robot_type.perform(context) != 'lite' and add_gripper.perform(context) in ('True', 'true'):
         controllers.append('{}{}_gripper_traj_controller'.format(prefix.perform(context), robot_type.perform(context)))

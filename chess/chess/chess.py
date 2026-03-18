@@ -24,7 +24,7 @@ base_link_name = "link_base"
 end_effector_name = "link6"
 group_name = "lite6"
 package_name = 'my_uf_moveit_config'
-srdf_file_name = 'config/lite6_robot.srdf'
+srdf_file_name = 'config/uf_robot.srdf'
 
 
 board_center = [0.285, 0.0]
@@ -80,7 +80,7 @@ class ChessNode(Node):
         self.stockfish_process = self.start_stockfish_process()
         self.current_position = 'startpos'
         self.move_group_helper = MovegroupHelper(self.node, joint_names, base_link_name, end_effector_name, group_name)
-        self.lite6_groupstates = srdfGroupStates(package_name, srdf_file_name, group_name)
+        self.uf_groupstates = srdfGroupStates(package_name, srdf_file_name, group_name)
 
         # Spin the node in background thread(s) and wait a bit for initialization
         executor = rclpy.executors.MultiThreadedExecutor(2)
@@ -90,7 +90,7 @@ class ChessNode(Node):
         node.create_rate(1.0).sleep()
 
         
-        result, joint_values = self.lite6_groupstates.get_joint_values('home')
+        result, joint_values = self.uf_groupstates.get_joint_values('home')
         if result:
             print("Move to home")
             self.move_group_helper.move_to_configuration(joint_values)

@@ -29,7 +29,7 @@ class manipulatorController(Node):
         self.end_effector_name = "link6"
         self.group_name = "lite6"
         self.package_name = "my_uf_moveit_config"
-        self.srdf_file_name = "config/lite6_robot.srdf"
+        self.srdf_file_name = "config/uf_robot.srdf"
 
         # TF setup
         self.tf_buffer = Buffer()

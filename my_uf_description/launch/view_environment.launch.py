@@ -10,7 +10,7 @@ def generate_launch_description():
     urdf_file_path = os.path.join(
         get_package_share_directory('my_uf_description'),
         'urdf',
-        'lite6_robot.urdf.xacro'
+        'uf_robot.urdf.xacro'
     )
 
     # Define the path to the RViz configuration file within the package
