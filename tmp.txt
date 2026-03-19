@@ -470,3 +470,52 @@
 [xarm_driver_node-7] [net work] Error: connect, errno=115
 [xarm_driver_node-7] xarm report2 thread is quit.
 [xarm_driver_node-7] Error: Tcp Report Norm connection failed, ip: 192.168.1.219
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[xarm_driver_node-7] [xarm_driver_node] Ctrl-C caught, exit process...
+[static_transform_publisher-8] [INFO] [1773911886.472367767] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[static_transform_publisher-3] [INFO] [1773911886.472384836] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[move_group-4] [INFO] [1773911886.472440634] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[robot_state_publisher-1] [INFO] [1773911886.472488202] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[rviz2-2] [INFO] [1773911886.472533592] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[rviz2-2] [WARN] [1773911886.483797413] [interactive_marker_display_96204061086944]: Server not available while running, resetting
+[move_group-4] [INFO] [1773911886.498442240] [move_group.moveit.moveit.ros.moveit_cpp]: Deleting MoveItCpp
+[xarm_driver_node-7] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[xarm_driver_node-7]   what():  failed to publish message: cannot publish data, at ./src/rmw_publish.cpp:66, at ./src/rcl/publisher.c:284
+[move_group-4] Stack trace (most recent call last):
+[move_group-4] #15   Object "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2", at 0xffffffffffffffff, in 
+[rviz2-2] 
+[rviz2-2] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[rviz2-2] This error state is being overwritten:
+[rviz2-2] 
+[rviz2-2]   'rcl node's context is invalid, at ./src/rcl/node.c:404'
+[rviz2-2] 
+[rviz2-2] with this new error message:
+[rviz2-2] 
+[rviz2-2]   'publisher's context is invalid, at ./src/rcl/publisher.c:423'
+[rviz2-2] 
+[rviz2-2] rcutils_reset_error() should be called after error handling to avoid this.
+[rviz2-2] <<<
+[rviz2-2] [INFO] [1773911886.543915349] [rviz2.moveit.ros.planning_scene_monitor]: Stopping planning scene monitor
+[INFO] [static_transform_publisher-3]: process has finished cleanly [pid 28547]
+[INFO] [static_transform_publisher-8]: process has finished cleanly [pid 28552]
+[INFO] [robot_state_publisher-1]: process has finished cleanly [pid 28545]
+[INFO] [joint_state_publisher-5]: process has finished cleanly [pid 28549]
+[move_group-4] #14   Object "/opt/ros/jazzy/lib/moveit_ros_move_group/move_group", at 0x5bdfe94f0a44, in _start
+[INFO] [rviz2-2]: process has finished cleanly [pid 28546]
+[move_group-4] #13   Source "../csu/libc-start.c", line 360, in __libc_start_main_impl [0x7821d5c2a28a]
+[move_group-4] #12   Source "../sysdeps/nptl/libc_start_call_main.h", line 58, in __libc_start_call_main [0x7821d5c2a1c9]
+[move_group-4] #11   Object "/opt/ros/jazzy/lib/moveit_ros_move_group/move_group", at 0x5bdfe94ef539, in main
+[move_group-4] #10   Object "/opt/ros/jazzy/lib/moveit_ros_move_group/move_group", at 0x5bdfe94f2159, in 
+[move_group-4] #9    Object "/opt/ros/jazzy/lib/libmoveit_cpp.so.2.12.4", at 0x7821d69d9ad0, in moveit_cpp::MoveItCpp::~MoveItCpp()
+[move_group-4] #8    Object "/opt/ros/jazzy/lib/libmoveit_cpp.so.2.12.4", at 0x7821d69d9989, in 
+[move_group-4] #7    Object "/opt/ros/jazzy/lib/libmoveit_trajectory_execution_manager.so.2.12.4", at 0x7821d5f3b5da, in trajectory_execution_manager::TrajectoryExecutionManager::~TrajectoryExecutionManager()
+[move_group-4] #6    Object "/opt/ros/jazzy/lib/libmoveit_trajectory_execution_manager.so.2.12.4", at 0x7821d5f4d735, in 
+[move_group-4] #5    Object "/opt/ros/jazzy/lib/librclcpp.so", at 0x7821d6536954, in rclcpp::Node::~Node()
+[move_group-4] #4    Object "/opt/ros/jazzy/lib/librclcpp.so", at 0x7821d64f17e5, in 
+[move_group-4] #3    Object "/opt/ros/jazzy/lib/librclcpp.so", at 0x7821d6535220, in 
+[move_group-4] #2    Object "/opt/ros/jazzy/lib/librclcpp.so", at 0x7821d6535163, in rclcpp::node_interfaces::NodeBase::~NodeBase()
+[move_group-4] #1    Object "/opt/ros/jazzy/lib/librclcpp.so", at 0x7821d64f18a9, in 
+[move_group-4] #0    Object "/opt/ros/jazzy/lib/librclcpp.so", at 0x7821d64f6379, in rclcpp::CallbackGroup::~CallbackGroup()
+[move_group-4] Segmentation fault (Address not mapped to object [0x78219f9fcda0])
+[ERROR] [xarm_driver_node-7]: process has died [pid 28551, exit code -6, cmd '/home/gerard/xarm_ws/install/xarm_api/lib/xarm_api/xarm_driver_node --ros-args -r __node:=ufactory_driver --params-file /tmp/launch_params_zdl7p4pg --params-file /tmp/launch_params_3f7ldudf'].
+[ERROR] [move_group-4]: process has died [pid 28548, exit code -11, cmd '/opt/ros/jazzy/lib/moveit_ros_move_group/move_group --ros-args --params-file /tmp/launch_params_4apyeqim --params-file /tmp/launch_params_8djxuhmu'].

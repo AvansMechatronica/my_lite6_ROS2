@@ -23,10 +23,9 @@ class manipulatorController(Node):
             prefix + "joint3",
             prefix + "joint4",
             prefix + "joint5",
-            prefix + "joint6",
         ]
         self.base_link_name = "link_base"
-        self.end_effector_name = "link6"
+        self.end_effector_name = "link5"
         self.group_name = "uf"
         self.package_name = "my_uf_moveit_config"
         self.srdf_file_name = "config/uf_robot.srdf"
