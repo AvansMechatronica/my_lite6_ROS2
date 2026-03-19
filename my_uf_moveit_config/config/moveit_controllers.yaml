@@ -13,6 +13,7 @@
       controller_names:
         - joint_trajectory_controller
         - scaled_joint_trajectory_controller
+        - xarm_gripper
 
       joint_trajectory_controller:
         action_ns: follow_joint_trajectory
@@ -36,3 +37,10 @@
           - joint3
           - joint4
           - joint5
+
+      xarm_gripper:
+        action_ns: gripper_action
+        type: GripperCommand
+        default: false
+        joints:
+          - drive_joint

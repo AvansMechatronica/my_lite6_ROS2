@@ -6,3 +6,4 @@ initial_positions:
   joint3: 0.0
   joint4: 0.0
   joint5: 0.0
+  drive_joint: 0.1
