@@ -1,5 +1,5 @@
-uf:
-  default_planner_config: RRT
+xarm5:
+  default_planner_config: RRTConnect
   planner_configs:
     - SBL
     - EST
@@ -24,4 +24,3 @@ uf:
     - LazyPRMstar
     - SPARS
     - SPARStwo
-    

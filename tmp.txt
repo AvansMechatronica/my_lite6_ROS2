@@ -1,0 +1,472 @@
+[INFO] [launch]: All log files can be found below /home/gerard/.ros/log/2026-03-19-10-05-03-692243-ROS2-LT1-28542
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [xarm_driver_node-7]: process started with pid [28551]
+[INFO] [robot_state_publisher-1]: process started with pid [28545]
+[INFO] [rviz2-2]: process started with pid [28546]
+[INFO] [static_transform_publisher-3]: process started with pid [28547]
+[INFO] [move_group-4]: process started with pid [28548]
+[INFO] [joint_state_publisher-5]: process started with pid [28549]
+[INFO] [ros2_control_node-6]: process started with pid [28550]
+[INFO] [static_transform_publisher-8]: process started with pid [28552]
+[INFO] [spawner-9]: process started with pid [28553]
+[INFO] [spawner-10]: process started with pid [28554]
+[static_transform_publisher-3] [WARN] [1773911104.125312228] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-8] [WARN] [1773911104.138387928] []: Old-style arguments are deprecated; see --help for new-style arguments
+[static_transform_publisher-3] [INFO] [1773911104.145373965] [static_transform_publisher]: Spinning until stopped - publishing transform
+[static_transform_publisher-3] translation: ('0.000000', '0.000000', '0.000000')
+[static_transform_publisher-3] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-3] from 'xarm_link' to 'link_base'
+[static_transform_publisher-8] [INFO] [1773911104.169583446] [static_traansfer_frame]: Spinning until stopped - publishing transform
+[static_transform_publisher-8] translation: ('-0.025000', '0.100000', '0.050000')
+[static_transform_publisher-8] rotation: ('0.000000', '0.000000', '0.000000', '1.000000')
+[static_transform_publisher-8] from 'world' to 'test_transfer_frame'
+[robot_state_publisher-1] [INFO] [1773911104.171903762] [robot_state_publisher]: Robot initialized
+[xarm_driver_node-7] [0m[INFO] [1773911104.175919894] [ufactory_driver]: namespace: /[0m
+[xarm_driver_node-7] [0m[INFO] [1773911104.176004134] [ufactory_driver]: xarm_driver_node start[0m
+[xarm_driver_node-7] [0m[INFO] [1773911104.176171662] [ufactory_driver]: robot_ip=192.168.1.219, report_type=normal, dof=5[0m
+[xarm_driver_node-7] [0m[INFO] [1773911104.176196643] [ufactory_driver]: baud_checkset: 1, default_gripper_baud: 2000000[0m
+[ros2_control_node-6] [INFO] [1773911104.181726300] [controller_manager]: Using Steady (Monotonic) clock for triggering controller manager cycles.
+[xarm_driver_node-7] SDK_VERSION: 1.17.3
+[ros2_control_node-6] [INFO] [1773911104.187930024] [controller_manager]: Subscribing to '/robot_description' topic for robot description.
+[ros2_control_node-6] [INFO] [1773911104.190346017] [controller_manager]: update rate is 100 Hz
+[ros2_control_node-6] [INFO] [1773911104.190380508] [controller_manager]: Overruns handling is : enabled
+[ros2_control_node-6] [INFO] [1773911104.190386364] [controller_manager]: Spawning controller_manager RT thread with scheduler priority: 50
+[xarm_driver_node-7] Tcp control connection successful
+[ros2_control_node-6] [WARN] [1773911104.190592315] [controller_manager]: Could not enable FIFO RT scheduling policy: with error number <1>(Operation not permitted). See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling.
+[move_group-4] [INFO] [1773911104.207458227] [move_group.moveit.moveit.ros.rdf_loader]: Loaded robot model in 0.00320598 seconds
+[move_group-4] [INFO] [1773911104.207565944] [move_group.moveit.moveit.core.robot_model]: Loading robot model 'uf_robot'...
+[move_group-4] [INFO] [1773911104.289943255] [move_group.moveit.moveit.kinematics.kdl_kinematics_plugin]: Joint weights for group 'uf': 1 1 1 1 1
+[ros2_control_node-6] [INFO] [1773911104.394183821] [controller_manager]: Received robot description from topic.
+[ros2_control_node-6] [INFO] [1773911104.399919580] [controller_manager]: Loading hardware 'uf_robot_hardware/UFRobotSystemHardware' 
+[ros2_control_node-6] [INFO] [1773911104.415839335] [controller_manager]: Loaded hardware 'uf_robot_hardware/UFRobotSystemHardware' from plugin 'uf_robot_hardware/UFRobotSystemHardware'
+[ros2_control_node-6] [INFO] [1773911104.415980934] [controller_manager]: Initialize hardware 'uf_robot_hardware/UFRobotSystemHardware' 
+[rviz2-2] [INFO] [1773911104.419909361] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-2] [INFO] [1773911104.420083185] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-2] [INFO] [1773911104.441090235] [rviz2]: Stereo is NOT SUPPORTED
+[ros2_control_node-6] [INFO] [1773911104.466924306] [UFACTORY.RobotHW]: [192.168.1.219] namespace: /
+[ros2_control_node-6] [INFO] [1773911104.466948608] [UFACTORY.RobotHW]: [192.168.1.219] robot_type: xarm, hw_ns: xarm, prefix: , report_type: normal
+[ros2_control_node-6] [INFO] [1773911104.467208944] [UFACTORY.RobotHW]: [192.168.1.219] dof: 5, velocity_control: 0, add_gripper: 1, add_bio_gripper: 0, baud_checkset: 1, default_gripper_baud: 2000000
+[ros2_control_node-6] [INFO] [1773911104.467486731] [ufactory_driver]: robot_ip=192.168.1.219, report_type=normal, dof=5
+[ros2_control_node-6] [INFO] [1773911104.467529559] [ufactory_driver]: baud_checkset: 1, default_gripper_baud: 2000000
+[ros2_control_node-6] SDK_VERSION: 1.17.3
+[ros2_control_node-6] Tcp control connection successful
+[xarm_driver_node-7] ROBOT_IP: 192.168.1.219, VERSION: v2.7.1, PROTOCOL: V1, DETAIL: 5,5,XF1305,AC1304,v2.7.1, TYPE1300: [1, 1]
+[xarm_driver_node-7] Tcp Report Rich connection successful
+[xarm_driver_node-7] change protocol identifier to 3
+[xarm_driver_node-7] report_data_size: 574, size_is_not_confirm: 0
+[xarm_driver_node-7] Tcp Report Norm connection successful
+[xarm_driver_node-7] report_data_size: 145, size_is_not_confirm: 0
+[xarm_driver_node-7] [0m[INFO] [1773911104.493731628] [ufactory_driver]: [TCP STATUS] CONTROL: 1, REPORT: 1[0m
+[xarm_driver_node-7] [0m[INFO] [1773911104.518447933] [ufactory_driver]: gripper_speed: 2000, gripper_max_pos: 850, gripper_frequency : 10, gripper_threshold: 3, gripper_threshold_times: 10[0m
+[xarm_driver_node-7] [0m[INFO] [1773911104.531228845] [ufactory_driver]: bio_gripper_speed: 2000, bio_gripper_max_pos: 150, bio_gripper_min_pos: 71, bio_gripper_frequency : 10, bio_gripper_threshold: 3, bio_gripper_threshold_times: 10[0m
+[rviz2-2] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-2]          at line 321 in /opt/ros/jazzy/include/class_loader/class_loader/class_loader_core.hpp
+[rviz2-2] [WARN] [1773911104.577222949] [rcl.logging_rosout]: Publisher already registered for node name: 'rviz2'. If this is due to multiple nodes with the same name then all logs for the logger named 'rviz2' will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[spawner-10] [INFO] [1773911104.633534333] [spawner_xarm5_traj_controller]: waiting for service /controller_manager/list_controllers to become available...
+[joint_state_publisher-5] [INFO] [1773911104.652447950] [joint_state_publisher]: Waiting for robot_description to be published on the robot_description topic...
+[move_group-4] [INFO] [1773911104.655727386] [move_group.moveit.moveit.ros.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'
+[move_group-4] [INFO] [1773911104.655921006] [move_group.moveit.moveit.ros.moveit_cpp]: Listening to 'joint_states' for joint states
+[move_group-4] [INFO] [1773911104.656806622] [move_group.moveit.moveit.ros.current_state_monitor]: Listening to joint states on topic 'joint_states'
+[move_group-4] [INFO] [1773911104.657306399] [move_group.moveit.moveit.ros.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects
+[move_group-4] [INFO] [1773911104.657326245] [move_group.moveit.moveit.ros.planning_scene_monitor]: Stopping existing planning scene publisher.
+[move_group-4] [INFO] [1773911104.657453019] [move_group.moveit.moveit.ros.planning_scene_monitor]: Stopped publishing maintained planning scene.
+[move_group-4] [INFO] [1773911104.657782465] [move_group.moveit.moveit.ros.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'
+[move_group-4] [INFO] [1773911104.657867367] [move_group.moveit.moveit.ros.planning_scene_monitor]: Starting planning scene monitor
+[move_group-4] [INFO] [1773911104.658242076] [move_group.moveit.moveit.ros.planning_scene_monitor]: Listening to '/planning_scene'
+[move_group-4] [INFO] [1773911104.658260923] [move_group.moveit.moveit.ros.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.
+[move_group-4] [INFO] [1773911104.658949649] [move_group.moveit.moveit.ros.planning_scene_monitor]: Listening to 'collision_object'
+[move_group-4] [INFO] [1773911104.659391541] [move_group.moveit.moveit.ros.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry
+[move_group-4] [WARN] [1773911104.659867799] [move_group.moveit.moveit.ros.occupancy_map_monitor]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead
+[move_group-4] [ERROR] [1773911104.659883603] [move_group.moveit.moveit.ros.occupancy_map_monitor]: No 3D sensor plugin(s) defined for octomap updates
+[ros2_control_node-6] ROBOT_IP: 192.168.1.219, VERSION: v2.7.1, PROTOCOL: V1, DETAIL: 5,5,XF1305,AC1304,v2.7.1, TYPE1300: [1, 1]
+[ros2_control_node-6] Tcp Report Rich connection successful
+[ros2_control_node-6] change protocol identifier to 3
+[ros2_control_node-6] Tcp Report Norm connection successful
+[ros2_control_node-6] [INFO] [1773911104.782339616] [ufactory_driver]: [TCP STATUS] CONTROL: 1, REPORT: 1
+[ros2_control_node-6] [INFO] [1773911104.797489695] [ufactory_driver]: gripper_speed: 2000, gripper_max_pos: 850, gripper_frequency : 10, gripper_threshold: 3, gripper_threshold_times: 10
+[ros2_control_node-6] [INFO] [1773911104.803436600] [ufactory_driver]: bio_gripper_speed: 2000, bio_gripper_max_pos: 150, bio_gripper_min_pos: 71, bio_gripper_frequency : 10, bio_gripper_threshold: 3, bio_gripper_threshold_times: 10
+[ros2_control_node-6] [INFO] [1773911104.805739957] [UFACTORY.RobotHW]: [192.168.1.219] System Sucessfully configured!
+[ros2_control_node-6] [INFO] [1773911104.805776634] [controller_manager]: Successful initialization of hardware 'uf_robot_hardware/UFRobotSystemHardware'
+[ros2_control_node-6] [INFO] [1773911104.806169581] [resource_manager]: 'configure' hardware 'uf_robot_hardware/UFRobotSystemHardware' 
+[ros2_control_node-6] [INFO] [1773911104.806177414] [resource_manager]: Successful 'configure' of hardware 'uf_robot_hardware/UFRobotSystemHardware'
+[ros2_control_node-6] [INFO] [1773911104.806182159] [resource_manager]: 'activate' hardware 'uf_robot_hardware/UFRobotSystemHardware' 
+[ros2_control_node-6] [clean_error], xArm is not ready to move
+[ros2_control_node-6] [set_state], xArm is ready to move
+[ros2_control_node-6] [INFO] [1773911104.829374005] [UFACTORY.RobotHW]: [192.168.1.219] System Sucessfully started!
+[ros2_control_node-6] [INFO] [1773911104.829399934] [resource_manager]: Successful 'activate' of hardware 'uf_robot_hardware/UFRobotSystemHardware'
+[ros2_control_node-6] [INFO] [1773911104.829450164] [controller_manager]: Registering statistics for : uf_robot_hardware/UFRobotSystemHardware
+[ros2_control_node-6] [INFO] [1773911104.829524698] [controller_manager]: Resource Manager has been successfully initialized. Starting Controller Manager services...
+[ros2_control_node-6] [INFO] [1773911104.886042295] [controller_manager]: Loading controller : 'xarm5_traj_controller' of type 'joint_trajectory_controller/JointTrajectoryController'
+[ros2_control_node-6] [INFO] [1773911104.886076816] [controller_manager]: Loading controller 'xarm5_traj_controller'
+[ros2_control_node-6] [INFO] [1773911104.887876058] [controller_manager]: Controller 'xarm5_traj_controller' node arguments: --ros-args --params-file /tmp/launch_params_8s4f2_j6 --params-file /tmp/launch_params_122ybvln --params-file /home/gerard/xarm_ws/install/xarm_api/share/xarm_api/config/xarm_params.yaml 
+[ros2_control_node-6] report_data_size: 574, size_is_not_confirm: 0
+[ros2_control_node-6] report_data_size: 145, size_is_not_confirm: 0
+[move_group-4] [INFO] [1773911104.901287908] [move_group.moveit.moveit.ros.planning_pipeline]: Successfully loaded planner 'OMPL'
+[move_group-4] [INFO] [1773911104.904935228] [move_group]: Try loading adapter 'default_planning_request_adapters/ResolveConstraintFrames'
+[move_group-4] [INFO] [1773911104.906210163] [move_group]: Loaded adapter 'default_planning_request_adapters/ResolveConstraintFrames'
+[move_group-4] [INFO] [1773911104.906231461] [move_group]: Try loading adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'
+[move_group-4] [INFO] [1773911104.906476781] [move_group]: Loaded adapter 'default_planning_request_adapters/ValidateWorkspaceBounds'
+[move_group-4] [INFO] [1773911104.906490488] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateBounds'
+[move_group-4] [INFO] [1773911104.906519620] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateBounds'
+[move_group-4] [INFO] [1773911104.906525463] [move_group]: Try loading adapter 'default_planning_request_adapters/CheckStartStateCollision'
+[move_group-4] [INFO] [1773911104.906538541] [move_group]: Loaded adapter 'default_planning_request_adapters/CheckStartStateCollision'
+[move_group-4] [INFO] [1773911104.908452692] [move_group]: Try loading adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'
+[move_group-4] [INFO] [1773911104.910377176] [move_group]: Loaded adapter 'default_planning_response_adapters/AddTimeOptimalParameterization'
+[move_group-4] [INFO] [1773911104.910397692] [move_group]: Try loading adapter 'default_planning_response_adapters/ValidateSolution'
+[move_group-4] [INFO] [1773911104.912251745] [move_group]: Loaded adapter 'default_planning_response_adapters/ValidateSolution'
+[move_group-4] [INFO] [1773911104.912275292] [move_group]: Try loading adapter 'default_planning_response_adapters/DisplayMotionPath'
+[move_group-4] [INFO] [1773911104.912886364] [move_group]: Loaded adapter 'default_planning_response_adapters/DisplayMotionPath'
+[move_group-4] [INFO] [1773911104.953735552] [move_group.moveit.moveit.plugins.simple_controller_manager]: Added FollowJointTrajectory controller for xarm5_traj_controller
+[move_group-4] [INFO] [1773911104.955773616] [move_group.moveit.moveit.plugins.simple_controller_manager]: Added FollowJointTrajectory controller for xarm_gripper_traj_controller
+[move_group-4] [INFO] [1773911104.955987189] [move_group.moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[move_group-4] [INFO] [1773911104.956023868] [move_group.moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[move_group-4] [INFO] [1773911104.956769016] [move_group.moveit.moveit.ros.trajectory_execution_manager]: Trajectory execution is not managing controllers
+[move_group-4] [INFO] [1773911104.956803801] [move_group]: MoveGroup debug mode is ON
+[move_group-4] [INFO] [1773911104.974264658] [move_group.moveit.moveit.ros.move_group.executable]: 
+[move_group-4] 
+[move_group-4] ********************************************************
+[move_group-4] * MoveGroup using: 
+[move_group-4] *     - apply_planning_scene_service
+[move_group-4] *     - clear_octomap_service
+[move_group-4] *     - get_group_urdf
+[move_group-4] *     - load_geometry_from_file
+[move_group-4] *     - CartesianPathService
+[move_group-4] *     - execute_trajectory_action
+[move_group-4] *     - get_planning_scene_service
+[move_group-4] *     - kinematics_service
+[move_group-4] *     - move_action
+[move_group-4] *     - motion_plan_service
+[move_group-4] *     - query_planners_service
+[move_group-4] *     - state_validation_service
+[move_group-4] *     - save_geometry_to_file
+[move_group-4] ********************************************************
+[move_group-4] 
+[move_group-4] [INFO] [1773911104.974316143] [move_group.moveit.moveit.ros.move_group.context]: MoveGroup context using pipeline ompl
+[move_group-4] [INFO] [1773911104.974324783] [move_group.moveit.moveit.ros.move_group.context]: MoveGroup context initialization complete
+[move_group-4] [96mLoading 'move_group/ApplyPlanningSceneService'...[0m
+[move_group-4] [96mLoading 'move_group/ClearOctomapService'...[0m
+[move_group-4] [96mLoading 'move_group/GetUrdfService'...[0m
+[move_group-4] [96mLoading 'move_group/LoadGeometryFromFileService'...[0m
+[move_group-4] [96mLoading 'move_group/MoveGroupCartesianPathService'...[0m
+[move_group-4] [96mLoading 'move_group/MoveGroupExecuteTrajectoryAction'...[0m
+[move_group-4] [96mLoading 'move_group/MoveGroupGetPlanningSceneService'...[0m
+[move_group-4] [96mLoading 'move_group/MoveGroupKinematicsService'...[0m
+[move_group-4] [96mLoading 'move_group/MoveGroupMoveAction'...[0m
+[move_group-4] [96mLoading 'move_group/MoveGroupPlanService'...[0m
+[move_group-4] [96mLoading 'move_group/MoveGroupQueryPlannersService'...[0m
+[move_group-4] [96mLoading 'move_group/MoveGroupStateValidationService'...[0m
+[move_group-4] [96mLoading 'move_group/SaveGeometryToFileService'...[0m
+[move_group-4] 
+[move_group-4] [92mYou can start planning now![0m
+[move_group-4] 
+[ros2_control_node-6] [WARN] [1773911105.891937953] [controller_manager]: Overrun might occur, Total time : 1001022.044 us (Expected < 10000.000 us) --> Read time : 656.735 us, Update time : 8.178 us, Write time : 1000357.131 us
+[ros2_control_node-6] [WARN] [1773911105.892070787] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 1001.227755 ms (missed cycles : 101).
+[ros2_control_node-6] [INFO] [1773911105.901587019] [UFACTORY.RobotHW]: [192.168.1.219] Robot is Ready
+[spawner-10] [INFO] [1773911105.904379298] [spawner_xarm5_traj_controller]: Loaded xarm5_traj_controller
+[ros2_control_node-6] [INFO] [1773911105.906848939] [controller_manager]: Configuring controller: 'xarm5_traj_controller'
+[ros2_control_node-6] [INFO] [1773911105.907384123] [xarm5_traj_controller]: No specific joint names are used for command interfaces. Using 'joints' parameter.
+[ros2_control_node-6] [INFO] [1773911105.907445529] [xarm5_traj_controller]: Command interfaces are [position] and state interfaces are [position velocity].
+[ros2_control_node-6] [INFO] [1773911105.907492369] [xarm5_traj_controller]: Using 'splines' interpolation method.
+[ros2_control_node-6] [INFO] [1773911105.922325643] [xarm5_traj_controller]: Action status changes will be monitored at 20.00 Hz.
+[ros2_control_node-6] [INFO] [1773911105.933615241] [controller_manager]: Activating controllers: [ xarm5_traj_controller ]
+[ros2_control_node-6] [INFO] [1773911105.941896050] [controller_manager]: Successfully switched controllers!
+[spawner-10] [INFO] [1773911105.954343587] [spawner_xarm5_traj_controller]: Configured and activated xarm5_traj_controller
+[spawner-9] [INFO] [1773911106.085625801] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[INFO] [spawner-10]: process has finished cleanly [pid 28554]
+[rviz2-2] [ERROR] [1773911107.622065795] [rviz2.moveit.ros.motion_planning_frame]: Action server: /recognize_objects not available
+[rviz2-2] [INFO] [1773911107.646398232] [rviz2.moveit.ros.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.
+[rviz2-2] [INFO] [1773911107.703760436] [rviz2.moveit.ros.rdf_loader]: Loaded robot model in 0.0039029 seconds
+[rviz2-2] [INFO] [1773911107.703830164] [rviz2.moveit.core.robot_model]: Loading robot model 'uf_robot'...
+[rviz2-2] [INFO] [1773911107.784597519] [rviz2.moveit.kinematics.kdl_kinematics_plugin]: Joint weights for group 'uf': 1 1 1 1 1
+[ros2_control_node-6] [INFO] [1773911107.894911330] [controller_manager]: Loading controller : 'joint_state_broadcaster' of type 'joint_state_broadcaster/JointStateBroadcaster'
+[ros2_control_node-6] [INFO] [1773911107.894944987] [controller_manager]: Loading controller 'joint_state_broadcaster'
+[ros2_control_node-6] [INFO] [1773911107.896654847] [controller_manager]: Controller 'joint_state_broadcaster' node arguments: --ros-args --params-file /tmp/launch_params_8s4f2_j6 --params-file /tmp/launch_params_122ybvln --params-file /home/gerard/xarm_ws/install/xarm_api/share/xarm_api/config/xarm_params.yaml 
+[spawner-9] [INFO] [1773911107.913104257] [spawner_joint_state_broadcaster]: Loaded joint_state_broadcaster
+[ros2_control_node-6] [INFO] [1773911107.914132999] [controller_manager]: Configuring controller: 'joint_state_broadcaster'
+[ros2_control_node-6] [INFO] [1773911107.914211136] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published
+[ros2_control_node-6] [INFO] [1773911107.922786805] [controller_manager]: Activating controllers: [ joint_state_broadcaster ]
+[ros2_control_node-6] [INFO] [1773911107.931742464] [controller_manager]: Successfully switched controllers!
+[spawner-9] [INFO] [1773911107.943427678] [spawner_joint_state_broadcaster]: Configured and activated joint_state_broadcaster
+[INFO] [spawner-9]: process has finished cleanly [pid 28553]
+[rviz2-2] [INFO] [1773911108.244283454] [rviz2.moveit.ros.planning_scene_monitor]: Starting planning scene monitor
+[rviz2-2] [INFO] [1773911108.245813309] [rviz2.moveit.ros.planning_scene_monitor]: Listening to '/monitored_planning_scene'
+[rviz2-2] [INFO] [1773911108.259709262] [interactive_marker_display_96204061086944]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic
+[rviz2-2] [INFO] [1773911108.265796193] [rviz2.moveit.ros.motion_planning_frame]: group uf
+[rviz2-2] [INFO] [1773911108.265821362] [rviz2.moveit.ros.motion_planning_frame]: Constructing new MoveGroup connection for group 'uf' in namespace ''
+[rviz2-2] [INFO] [1773911108.275852181] [interactive_marker_display_96204061086944]: Sending request for interactive markers
+[rviz2-2] [INFO] [1773911108.278117955] [rviz2.moveit.ros.move_group_interface]: Ready to take commands for planning group uf.
+[rviz2-2] [INFO] [1773911108.307940930] [interactive_marker_display_96204061086944]: Service response received for initialization
+[rviz2-2] [INFO] [1773911113.619609642] [rviz2.moveit.ros.move_group_interface]: MoveGroup action client/server ready
+[move_group-4] [INFO] [1773911113.620688498] [move_group.moveit.moveit.ros.move_group.move_action]: MoveGroupMoveAction: Received request
+[rviz2-2] [INFO] [1773911113.621208494] [rviz2.moveit.ros.move_group_interface]: Planning request accepted
+[move_group-4] [INFO] [1773911113.621382331] [move_group.moveit.moveit.ros.move_group.move_action]: executing..
+[move_group-4] [INFO] [1773911113.622901994] [move_group.moveit.moveit.ros.move_group.move_action]: Planning request received for MoveGroup action. Forwarding to planning pipeline.
+[move_group-4] [INFO] [1773911113.622967098] [move_group.moveit.moveit.ros.move_group.capability]: Using planning pipeline 'ompl'
+[move_group-4] [INFO] [1773911113.623423835] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[move_group-4] [INFO] [1773911113.623500974] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[move_group-4] [INFO] [1773911113.623536241] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[move_group-4] [INFO] [1773911113.623628833] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[move_group-4] [INFO] [1773911113.624985383] [move_group.moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'uf' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-4] [INFO] [1773911113.625304051] [move_group]: Calling Planner 'OMPL'
+[move_group-4] [INFO] [1773911113.638108024] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'
+[move_group-4] [INFO] [1773911113.646131400] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[move_group-4] [INFO] [1773911113.646854212] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[move_group-4] [WARN] [1773911113.646976606] [move_group.moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.
+[move_group-4] [INFO] [1773911113.647057964] [move_group.moveit.moveit.ros.move_group.move_action]: Motion plan was computed successfully.
+[rviz2-2] [INFO] [1773911113.647358282] [rviz2.moveit.ros.move_group_interface]: Planning request complete!
+[rviz2-2] [INFO] [1773911113.648408419] [rviz2.moveit.ros.move_group_interface]: time taken to generate plan: 0.012375 seconds
+[move_group-4] [INFO] [1773911115.743383565] [move_group.moveit.moveit.ros.move_group.clear_octomap_service]: Execution request received
+[move_group-4] [INFO] [1773911115.743493192] [move_group.moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[move_group-4] [INFO] [1773911115.743534914] [move_group.moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[rviz2-2] [INFO] [1773911115.743485021] [rviz2.moveit.ros.move_group_interface]: Execute request accepted
+[move_group-4] [INFO] [1773911115.743713188] [move_group.moveit.moveit.ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01
+[move_group-4] [INFO] [1773911115.752156593] [move_group.moveit.moveit.ros.trajectory_execution_manager]: Starting trajectory execution ...
+[move_group-4] [INFO] [1773911115.752284469] [move_group.moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[move_group-4] [INFO] [1773911115.752344399] [move_group.moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[move_group-4] [INFO] [1773911115.752635552] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to xarm5_traj_controller
+[ros2_control_node-6] [INFO] [1773911115.753362996] [xarm5_traj_controller]: Received new action goal
+[ros2_control_node-6] [INFO] [1773911115.753439461] [xarm5_traj_controller]: Accepted new action goal
+[move_group-4] [INFO] [1773911115.753712040] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: xarm5_traj_controller started execution
+[move_group-4] [INFO] [1773911115.753754772] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted!
+[ros2_control_node-6] [INFO] [1773911123.251701567] [xarm5_traj_controller]: Goal reached, success!
+[move_group-4] [INFO] [1773911123.254435671] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'xarm5_traj_controller' successfully finished
+[move_group-4] [INFO] [1773911123.271918354] [move_group.moveit.moveit.ros.trajectory_execution_manager]: Completed trajectory execution with status SUCCEEDED ...
+[move_group-4] [INFO] [1773911123.272107431] [move_group.moveit.moveit.ros.move_group.clear_octomap_service]: Execution completed: SUCCEEDED
+[rviz2-2] [INFO] [1773911123.272540210] [rviz2.moveit.ros.move_group_interface]: Execute request success!
+[rviz2-2] [INFO] [1773911129.443272944] [rviz2.moveit.ros.move_group_interface]: MoveGroup action client/server ready
+[move_group-4] [INFO] [1773911129.443762792] [move_group.moveit.moveit.ros.move_group.move_action]: MoveGroupMoveAction: Received request
+[move_group-4] [INFO] [1773911129.444057682] [move_group.moveit.moveit.ros.move_group.move_action]: executing..
+[rviz2-2] [INFO] [1773911129.444114186] [rviz2.moveit.ros.move_group_interface]: Planning request accepted
+[move_group-4] [INFO] [1773911129.452068166] [move_group.moveit.moveit.ros.move_group.move_action]: Planning request received for MoveGroup action. Forwarding to planning pipeline.
+[move_group-4] [INFO] [1773911129.452162691] [move_group.moveit.moveit.ros.move_group.capability]: Using planning pipeline 'ompl'
+[move_group-4] [INFO] [1773911129.452363729] [move_group]: Calling PlanningRequestAdapter 'ResolveConstraintFrames'
+[move_group-4] [INFO] [1773911129.452418110] [move_group]: Calling PlanningRequestAdapter 'ValidateWorkspaceBounds'
+[move_group-4] [INFO] [1773911129.452445950] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateBounds'
+[move_group-4] [INFO] [1773911129.452508871] [move_group]: Calling PlanningRequestAdapter 'CheckStartStateCollision'
+[move_group-4] [INFO] [1773911129.453183246] [move_group.moveit.moveit.planners.ompl.model_based_planning_context]: Planner configuration 'uf' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-4] [INFO] [1773911129.453313824] [move_group]: Calling Planner 'OMPL'
+[move_group-4] [INFO] [1773911129.474545150] [move_group]: Calling PlanningResponseAdapter 'AddTimeOptimalParameterization'
+[move_group-4] [INFO] [1773911129.481157838] [move_group]: Calling PlanningResponseAdapter 'ValidateSolution'
+[move_group-4] [INFO] [1773911129.481969320] [move_group]: Calling PlanningResponseAdapter 'DisplayMotionPath'
+[move_group-4] [WARN] [1773911129.482067550] [move_group.moveit.moveit.ros.planning_pipeline]: The planner plugin did not fill out the 'planner_id' field of the MotionPlanResponse. Setting it to the planner ID name of the MotionPlanRequest assuming that the planner plugin does warn you if it does not use the requested planner.
+[move_group-4] [INFO] [1773911129.482144785] [move_group.moveit.moveit.ros.move_group.move_action]: Motion plan was computed successfully.
+[rviz2-2] [INFO] [1773911129.482352465] [rviz2.moveit.ros.move_group_interface]: Planning request complete!
+[rviz2-2] [INFO] [1773911129.482949322] [rviz2.moveit.ros.move_group_interface]: time taken to generate plan: 0.0210104 seconds
+[move_group-4] [INFO] [1773911130.751006119] [move_group.moveit.moveit.ros.move_group.clear_octomap_service]: Execution request received
+[move_group-4] [INFO] [1773911130.751099159] [move_group.moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[move_group-4] [INFO] [1773911130.751131943] [move_group.moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[rviz2-2] [INFO] [1773911130.751098508] [rviz2.moveit.ros.move_group_interface]: Execute request accepted
+[move_group-4] [INFO] [1773911130.751236830] [move_group.moveit.moveit.ros.trajectory_execution_manager]: Validating trajectory with allowed_start_tolerance 0.01
+[move_group-4] [INFO] [1773911130.752096886] [move_group.moveit.moveit.ros.trajectory_execution_manager]: Starting trajectory execution ...
+[move_group-4] [INFO] [1773911130.752194277] [move_group.moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[move_group-4] [INFO] [1773911130.752234850] [move_group.moveit.moveit.plugins.simple_controller_manager]: Returned 2 controllers in list
+[move_group-4] [INFO] [1773911130.752419462] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: sending trajectory to xarm5_traj_controller
+[ros2_control_node-6] [INFO] [1773911130.752772265] [xarm5_traj_controller]: Received new action goal
+[ros2_control_node-6] [INFO] [1773911130.752824104] [xarm5_traj_controller]: Accepted new action goal
+[move_group-4] [INFO] [1773911130.753040198] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: xarm5_traj_controller started execution
+[move_group-4] [INFO] [1773911130.753060277] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Goal request accepted!
+[ros2_control_node-6] [WARN] [1773911136.412408774] [UFACTORY.RobotHW]: [192.168.1.219] set_servo_angle_j, ret= 1
+[ros2_control_node-6] [WARN] [1773911136.422356409] [UFACTORY.RobotHW]: [192.168.1.219] set_servo_angle_j, ret= 1
+[ros2_control_node-6] [WARN] [1773911136.511747150] [UFACTORY.RobotHW]: [192.168.1.219] Robot Mode detected! Mode: 0
+[ros2_control_node-6] [INFO] [1773911136.513122842] [controller_manager]: Deactivating controllers: [ joint_state_broadcaster xarm5_traj_controller ]
+[ros2_control_node-6] [INFO] [1773911136.513231607] [controller_manager]: Requested controller switch from non-realtime loop
+[ros2_control_node-6] [INFO] [1773911136.513314519] [controller_manager]: Deactivated controllers: [ joint_state_broadcaster xarm5_traj_controller ]
+[ros2_control_node-6] [INFO] [1773911136.513323460] [controller_manager]: Successfully switched controllers!
+[move_group-4] [WARN] [1773911136.553544957] [moveit.simple_controller_manager.follow_joint_trajectory_controller_handle]: Controller 'xarm5_traj_controller' failed with error INVALID_GOAL: Current goal cancelled during deactivate transition.
+[move_group-4] [WARN] [1773911136.553630466] [move_group.moveit.moveit.ros.trajectory_execution_manager]: Controller handle xarm5_traj_controller reports status ABORTED
+[move_group-4] [INFO] [1773911136.553703479] [move_group.moveit.moveit.ros.trajectory_execution_manager]: Completed trajectory execution with status ABORTED ...
+[move_group-4] [INFO] [1773911136.553837735] [move_group.moveit.moveit.ros.move_group.clear_octomap_service]: Execution completed: ABORTED
+[rviz2-2] [INFO] [1773911136.554213058] [rviz2.moveit.ros.move_group_interface]: Execute request aborted
+[rviz2-2] [ERROR] [1773911136.554917506] [rviz2.moveit.ros.move_group_interface]: MoveGroupInterface::execute() failed or timeout reached
+[ros2_control_node-6] [WARN] [1773911137.513749234] [controller_manager]: Overrun might occur, Total time : 1002816.464 us (Expected < 10000.000 us) --> Read time : 752.903 us, Update time : 58.874 us (Switch time : 61.130 us (Switch chained mode time : 0.517 us, perform mode change time : 1.855 us, Activation time : 0.490 us, Deactivation time : 57.843 us)), Write time : 1002004.687 us
+[ros2_control_node-6] [WARN] [1773911137.513863364] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 1003.020537 ms (missed cycles : 101).
+[ros2_control_node-6] [ERROR] [1773911137.520941876] [UFACTORY.RobotHW]: [192.168.1.219] UFACTORY Error detected! Code C31 -> [ Collision Caused Abnormal Joint Current ] 
+[ros2_control_node-6] [WARN] [1773911225.931711356] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 4
+[ros2_control_node-6] [WARN] [1773911238.531668062] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911240.731974350] [UFACTORY.RobotHW]: [192.168.1.219] Robot Mode detected! Mode: 2
+[ros2_control_node-6] [ERROR] [1773911240.930948360] [UFACTORY.RobotHW]: [192.168.1.219] UFACTORY Error detected! Code C37 -> [ Abnormal Motion in Manual Mode ] 
+[ros2_control_node-6] [WARN] [1773911242.731665150] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 4
+[ros2_control_node-6] [ERROR] [1773911244.330944308] [UFACTORY.RobotHW]: [192.168.1.219] UFACTORY Error detected! Code C37 -> [ Abnormal Motion in Manual Mode ] 
+[ros2_control_node-6] [WARN] [1773911247.331705684] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 4
+[ros2_control_node-6] [WARN] [1773911251.541690686] [UFACTORY.RobotHW]: [192.168.1.219] Robot Mode detected! Mode: 0
+[ros2_control_node-6] [WARN] [1773911251.941798665] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911255.261968163] [controller_manager]: Overrun might occur, Total time : 11044.376 us (Expected < 10000.000 us) --> Read time : 11021.628 us, Update time : 13.735 us, Write time : 9.013 us
+[ros2_control_node-6] [WARN] [1773911255.262062117] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 11.219507 ms (missed cycles : 2).
+[ros2_control_node-6] [WARN] [1773911255.541674879] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911257.141711664] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 6
+[ros2_control_node-6] [WARN] [1773911257.341664366] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911264.541761668] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911267.341676964] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911271.141719595] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911273.541772985] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911274.941724401] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911277.941656055] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 6
+[ros2_control_node-6] [WARN] [1773911278.141760214] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911283.141677451] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911285.751803244] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [WARN] [1773911286.741682989] [UFACTORY.RobotHW]: [192.168.1.219] Robot State detected! State: 5
+[ros2_control_node-6] [ERROR] [1773911353.360970049] [UFACTORY.RobotHW]: [192.168.1.219] UFACTORY Error detected! Code C11 -> [ Servo Motor Error of Joint 1 ] 
+[ros2_control_node-6] [INFO] [1773911355.410723452] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911355.410812109] [controller_manager]: Overrun might occur, Total time : 1999892.017 us (Expected < 10000.000 us) --> Read time : 1999865.601 us, Update time : 15.483 us, Write time : 10.933 us
+[ros2_control_node-6] [WARN] [1773911355.410873946] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.031368 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911357.420858536] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911357.420960582] [controller_manager]: Overrun might occur, Total time : 2000038.101 us (Expected < 10000.000 us) --> Read time : 2000006.568 us, Update time : 19.369 us, Write time : 12.164 us
+[ros2_control_node-6] [WARN] [1773911357.421034082] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.190975 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911359.430989211] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911359.431093875] [controller_manager]: Overrun might occur, Total time : 2000171.781 us (Expected < 10000.000 us) --> Read time : 2000138.923 us, Update time : 20.080 us, Write time : 12.778 us
+[ros2_control_node-6] [WARN] [1773911359.431154882] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.312400 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911361.440926523] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911361.441023995] [controller_manager]: Overrun might occur, Total time : 2000105.333 us (Expected < 10000.000 us) --> Read time : 2000078.317 us, Update time : 16.214 us, Write time : 10.802 us
+[ros2_control_node-6] [WARN] [1773911361.441078397] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.235501 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911363.450698604] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911363.450799431] [controller_manager]: Overrun might occur, Total time : 1999881.900 us (Expected < 10000.000 us) --> Read time : 1999850.407 us, Update time : 18.720 us, Write time : 12.773 us
+[ros2_control_node-6] [WARN] [1773911363.450853140] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.010392 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911365.460792463] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911365.460886803] [controller_manager]: Overrun might occur, Total time : 1999947.153 us (Expected < 10000.000 us) --> Read time : 1999919.781 us, Update time : 16.019 us, Write time : 11.353 us
+[ros2_control_node-6] [WARN] [1773911365.460948182] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.105283 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911367.470841455] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911367.470932690] [controller_manager]: Overrun might occur, Total time : 2000013.725 us (Expected < 10000.000 us) --> Read time : 1999983.458 us, Update time : 18.393 us, Write time : 11.874 us
+[ros2_control_node-6] [WARN] [1773911367.470993383] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.150607 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911369.480626584] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911369.480731708] [controller_manager]: Overrun might occur, Total time : 1999806.732 us (Expected < 10000.000 us) --> Read time : 1999773.401 us, Update time : 20.149 us, Write time : 13.182 us
+[ros2_control_node-6] [WARN] [1773911369.480805229] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 1999.962277 ms (missed cycles : 200).
+[ros2_control_node-6] [INFO] [1773911371.481006835] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911371.481112523] [controller_manager]: Overrun might occur, Total time : 2000189.609 us (Expected < 10000.000 us) --> Read time : 2000160.503 us, Update time : 18.371 us, Write time : 10.735 us
+[ros2_control_node-6] [WARN] [1773911371.481178720] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.335582 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911373.490899724] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911373.490986683] [controller_manager]: Overrun might occur, Total time : 2000051.481 us (Expected < 10000.000 us) --> Read time : 2000025.588 us, Update time : 15.636 us, Write time : 10.257 us
+[ros2_control_node-6] [WARN] [1773911373.491037167] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.194156 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911375.500861279] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911375.500941849] [controller_manager]: Overrun might occur, Total time : 2000017.340 us (Expected < 10000.000 us) --> Read time : 1999988.788 us, Update time : 17.818 us, Write time : 10.734 us
+[ros2_control_node-6] [WARN] [1773911375.500993500] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.150813 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911377.510463443] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911377.510541014] [controller_manager]: Overrun might occur, Total time : 1999607.941 us (Expected < 10000.000 us) --> Read time : 1999584.230 us, Update time : 13.828 us, Write time : 9.883 us
+[ros2_control_node-6] [WARN] [1773911377.510585975] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 1999.743507 ms (missed cycles : 200).
+[ros2_control_node-6] [INFO] [1773911379.510996897] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911379.511100632] [controller_manager]: Overrun might occur, Total time : 2000187.144 us (Expected < 10000.000 us) --> Read time : 2000155.880 us, Update time : 18.913 us, Write time : 12.351 us
+[ros2_control_node-6] [WARN] [1773911379.511163993] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.321254 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911381.520871724] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911381.520978745] [controller_manager]: Overrun might occur, Total time : 2000032.647 us (Expected < 10000.000 us) --> Read time : 1999998.671 us, Update time : 20.435 us, Write time : 13.541 us
+[ros2_control_node-6] [WARN] [1773911381.521056612] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.213810 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911383.530666248] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911383.530759748] [controller_manager]: Overrun might occur, Total time : 1999838.479 us (Expected < 10000.000 us) --> Read time : 1999807.036 us, Update time : 18.778 us, Write time : 12.665 us
+[ros2_control_node-6] [WARN] [1773911383.530810449] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 1999.968073 ms (missed cycles : 200).
+[ros2_control_node-6] [INFO] [1773911387.530837432] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911387.530921194] [controller_manager]: Overrun might occur, Total time : 4000031.870 us (Expected < 10000.000 us) --> Read time : 4000004.660 us, Update time : 14.955 us, Write time : 12.255 us
+[ros2_control_node-6] [WARN] [1773911387.530973921] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 4000.131235 ms (missed cycles : 401).
+[ros2_control_node-6] [INFO] [1773911389.540728918] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911389.540821236] [controller_manager]: Overrun might occur, Total time : 1999888.849 us (Expected < 10000.000 us) --> Read time : 1999863.548 us, Update time : 15.293 us, Write time : 10.008 us
+[ros2_control_node-6] [WARN] [1773911389.540867308] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.024765 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911391.550736763] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911391.550839470] [controller_manager]: Overrun might occur, Total time : 1999907.620 us (Expected < 10000.000 us) --> Read time : 1999875.158 us, Update time : 19.602 us, Write time : 12.860 us
+[ros2_control_node-6] [WARN] [1773911391.550890169] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.047541 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911393.560633788] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911393.560723229] [controller_manager]: Overrun might occur, Total time : 1999783.284 us (Expected < 10000.000 us) --> Read time : 1999755.565 us, Update time : 16.414 us, Write time : 11.305 us
+[ros2_control_node-6] [WARN] [1773911393.560785282] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 1999.942455 ms (missed cycles : 200).
+[ros2_control_node-6] [INFO] [1773911397.561034678] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911397.561135676] [controller_manager]: Overrun might occur, Total time : 4000211.146 us (Expected < 10000.000 us) --> Read time : 4000182.271 us, Update time : 17.227 us, Write time : 11.648 us
+[ros2_control_node-6] [WARN] [1773911397.561198739] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 4000.355337 ms (missed cycles : 401).
+[ros2_control_node-6] [INFO] [1773911399.570496475] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911399.570595187] [controller_manager]: Overrun might occur, Total time : 1999656.185 us (Expected < 10000.000 us) --> Read time : 1999625.518 us, Update time : 18.472 us, Write time : 12.195 us
+[ros2_control_node-6] [WARN] [1773911399.570665960] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 1999.822986 ms (missed cycles : 200).
+[ros2_control_node-6] [INFO] [1773911401.571017470] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911401.571094886] [controller_manager]: Overrun might occur, Total time : 2000166.298 us (Expected < 10000.000 us) --> Read time : 2000142.222 us, Update time : 14.781 us, Write time : 9.295 us
+[ros2_control_node-6] [WARN] [1773911401.571138694] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.296184 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911403.580962401] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911403.581050978] [controller_manager]: Overrun might occur, Total time : 2000137.631 us (Expected < 10000.000 us) --> Read time : 2000110.119 us, Update time : 16.210 us, Write time : 11.302 us
+[ros2_control_node-6] [WARN] [1773911403.581105005] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.262134 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911407.580632601] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911407.580729524] [controller_manager]: Overrun might occur, Total time : 3989792.148 us (Expected < 10000.000 us) --> Read time : 3989762.058 us, Update time : 17.639 us, Write time : 12.451 us
+[ros2_control_node-6] [WARN] [1773911407.580788273] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 3989.945367 ms (missed cycles : 399).
+[ros2_control_node-6] [INFO] [1773911409.580457600] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911409.580546571] [controller_manager]: Overrun might occur, Total time : 1999628.065 us (Expected < 10000.000 us) --> Read time : 1999598.409 us, Update time : 17.851 us, Write time : 11.805 us
+[ros2_control_node-6] [WARN] [1773911409.580609175] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 1999.766297 ms (missed cycles : 200).
+[ros2_control_node-6] [INFO] [1773911411.580844479] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911411.580928576] [controller_manager]: Overrun might occur, Total time : 2000005.783 us (Expected < 10000.000 us) --> Read time : 1999980.561 us, Update time : 15.853 us, Write time : 9.369 us
+[ros2_control_node-6] [WARN] [1773911411.580972378] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.129805 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911413.590511092] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911413.590622503] [controller_manager]: Overrun might occur, Total time : 1999703.773 us (Expected < 10000.000 us) --> Read time : 1999669.895 us, Update time : 20.484 us, Write time : 13.394 us
+[ros2_control_node-6] [WARN] [1773911413.590681900] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 1999.839184 ms (missed cycles : 200).
+[ros2_control_node-6] [INFO] [1773911417.590599422] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911417.590702619] [controller_manager]: Overrun might occur, Total time : 3999780.569 us (Expected < 10000.000 us) --> Read time : 3999748.062 us, Update time : 20.012 us, Write time : 12.495 us
+[ros2_control_node-6] [WARN] [1773911417.590762914] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 3999.919981 ms (missed cycles : 400).
+[ros2_control_node-6] [INFO] [1773911419.590762999] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911419.590839519] [controller_manager]: Overrun might occur, Total time : 1999919.835 us (Expected < 10000.000 us) --> Read time : 1999896.141 us, Update time : 14.700 us, Write time : 8.994 us
+[ros2_control_node-6] [WARN] [1773911419.590883778] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.041175 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911421.600928158] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911421.601004939] [controller_manager]: Overrun might occur, Total time : 2000080.658 us (Expected < 10000.000 us) --> Read time : 2000057.891 us, Update time : 13.999 us, Write time : 8.768 us
+[ros2_control_node-6] [WARN] [1773911421.601049637] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.207281 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911423.610936680] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911423.611057820] [controller_manager]: Overrun might occur, Total time : 2000117.658 us (Expected < 10000.000 us) --> Read time : 2000085.394 us, Update time : 20.304 us, Write time : 11.960 us
+[ros2_control_node-6] [WARN] [1773911423.611107187] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.264565 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911427.611000796] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911427.611081576] [controller_manager]: Overrun might occur, Total time : 3990137.346 us (Expected < 10000.000 us) --> Read time : 3990113.074 us, Update time : 14.623 us, Write time : 9.649 us
+[ros2_control_node-6] [WARN] [1773911427.611132010] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 3990.289143 ms (missed cycles : 400).
+[ros2_control_node-6] [INFO] [1773911429.620992079] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911429.621100337] [controller_manager]: Overrun might occur, Total time : 2000176.523 us (Expected < 10000.000 us) --> Read time : 2000144.617 us, Update time : 20.762 us, Write time : 11.144 us
+[ros2_control_node-6] [WARN] [1773911429.621149624] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.307262 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911431.630532593] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911431.630633783] [controller_manager]: Overrun might occur, Total time : 1999706.405 us (Expected < 10000.000 us) --> Read time : 1999674.248 us, Update time : 18.641 us, Write time : 13.516 us
+[ros2_control_node-6] [WARN] [1773911431.630705004] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 1999.862368 ms (missed cycles : 200).
+[ros2_control_node-6] [INFO] [1773911433.630722771] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911433.630820388] [controller_manager]: Overrun might occur, Total time : 1999894.734 us (Expected < 10000.000 us) --> Read time : 1999865.342 us, Update time : 17.738 us, Write time : 11.654 us
+[ros2_control_node-6] [WARN] [1773911433.630883590] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.040899 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911437.630469147] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911437.630556434] [controller_manager]: Overrun might occur, Total time : 3989640.300 us (Expected < 10000.000 us) --> Read time : 3989612.989 us, Update time : 16.376 us, Write time : 10.935 us
+[ros2_control_node-6] [WARN] [1773911437.630620184] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 3989.777107 ms (missed cycles : 399).
+[ros2_control_node-6] [INFO] [1773911439.630868259] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911439.630972895] [controller_manager]: Overrun might occur, Total time : 2000050.344 us (Expected < 10000.000 us) --> Read time : 2000019.761 us, Update time : 18.107 us, Write time : 12.476 us
+[ros2_control_node-6] [WARN] [1773911439.631023461] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.180804 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911441.641046851] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911441.641139221] [controller_manager]: Overrun might occur, Total time : 2000198.497 us (Expected < 10000.000 us) --> Read time : 2000171.651 us, Update time : 15.648 us, Write time : 11.198 us
+[ros2_control_node-6] [WARN] [1773911441.641201505] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.358518 ms (missed cycles : 201).
+[ros2_control_node-6] [INFO] [1773911443.650917687] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 3
+[ros2_control_node-6] [WARN] [1773911443.651010193] [controller_manager]: Overrun might occur, Total time : 2000080.773 us (Expected < 10000.000 us) --> Read time : 2000051.122 us, Update time : 18.772 us, Write time : 10.879 us
+[ros2_control_node-6] [WARN] [1773911443.651069373] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 2000.226459 ms (missed cycles : 201).
+[ros2_control_node-6] socket read failed, port=30002, fp=35, errno=110, exit
+[ros2_control_node-6] socket read failed, port=30001, fp=36, errno=110, exit
+[xarm_driver_node-7] socket read failed, port=30002, fp=35, errno=110, exit
+[xarm_driver_node-7] socket read failed, port=30001, fp=36, errno=110, exit
+[xarm_driver_node-7] Report[normal] is disconnected, try reconnect
+[xarm_driver_node-7] [0m[INFO] [1773911444.260432414] [ufactory_driver]: [TCP STATUS] CONTROL: 1, REPORT: 0[0m
+[ros2_control_node-6] Report[normal] is disconnected, try reconnect
+[ros2_control_node-6] [INFO] [1773911444.260436321] [ufactory_driver]: [TCP STATUS] CONTROL: 1, REPORT: 0
+[xarm_driver_node-7] client timeout over 90s, disconnect.
+[xarm_driver_node-7] xarm report thread is quit.
+[xarm_driver_node-7] [net work] Error: socket_send_data, errno=9
+[xarm_driver_node-7] [0m[INFO] [1773911445.341865884] [ufactory_driver]: [TCP STATUS] CONTROL: 0, REPORT: 0[0m
+[xarm_driver_node-7] [31m[ERROR] [1773911445.542052441] [ufactory_driver]: xArm Control Connection Failed! Please Shut Down (Ctrl-C) and Retry ...[0m
+[ros2_control_node-6] client timeout over 90s, disconnect.
+[ros2_control_node-6] [INFO] [1773911445.650708212] [ufactory_driver]: [TCP STATUS] CONTROL: 0, REPORT: 0
+[ros2_control_node-6] xarm report thread is quit.
+[ros2_control_node-6] [net work] Error: socket_send_data, errno=9
+[ros2_control_node-6] [INFO] [1773911445.650816565] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: 8
+[ros2_control_node-6] [WARN] [1773911445.650890643] [controller_manager]: Overrun might occur, Total time : 1989961.151 us (Expected < 10000.000 us) --> Read time : 1989936.389 us, Update time : 14.276 us, Write time : 10.486 us
+[ros2_control_node-6] [WARN] [1773911445.650935161] [controller_manager]: Overrun detected! The controller manager missed its desired rate of 100 Hz. The loop took 1990.092949 ms (missed cycles : 200).
+[ros2_control_node-6] [INFO] [1773911445.661042174] [UFACTORY.RobotHW]: [192.168.1.219] Read() returns: -1
+[ros2_control_node-6] [ERROR] [1773911445.661086859] [UFACTORY.RobotHW]: [192.168.1.219] Robot is disconnected, ros shutdown
+[ros2_control_node-6] [INFO] [1773911445.661152630] [controller_manager]: Shutdown request received....
+[ros2_control_node-6] [INFO] [1773911445.661189325] [controller_manager]: Shutting down all controllers in the controller manager.
+[ros2_control_node-6] [INFO] [1773911445.661209444] [controller_manager]: Shutting down controller 'joint_state_broadcaster'
+[ros2_control_node-6] [INFO] [1773911445.661518866] [controller_manager]: Shutting down controller 'xarm5_traj_controller'
+[ros2_control_node-6] [INFO] [1773911445.661623538] [resource_manager]: 'deactivate' hardware 'uf_robot_hardware/UFRobotSystemHardware' 
+[ros2_control_node-6] [INFO] [1773911445.661663363] [UFACTORY.RobotHW]: [192.168.1.219] Stopping ...please wait...
+[ros2_control_node-6] [INFO] [1773911445.661680837] [UFACTORY.RobotHW]: [192.168.1.219] System sucessfully stopped!
+[ros2_control_node-6] [INFO] [1773911445.661691574] [resource_manager]: Successful 'deactivate' of hardware 'uf_robot_hardware/UFRobotSystemHardware'
+[ros2_control_node-6] [INFO] [1773911445.661700071] [resource_manager]: 'shutdown' hardware 'uf_robot_hardware/UFRobotSystemHardware' 
+[ros2_control_node-6] [INFO] [1773911445.661716281] [resource_manager]: Successful 'shutdown' of hardware 'uf_robot_hardware/UFRobotSystemHardware'
+[ros2_control_node-6] [INFO] [1773911445.661774824] [controller_manager]: Shutting down the controller manager.
+[ros2_control_node-6] [ERROR] [1773911445.661990442] [controller_manager.pal_statistics]: Exception in publisher thread: context cannot be slept with because it's invalid!. Aborting!
+[ros2_control_node-6] [ERROR] [1773911445.662102077] [controller_manager.pal_statistics]: Exception in publisher thread: context cannot be slept with because it's invalid!. Aborting!
+[ros2_control_node-6] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[ros2_control_node-6]          at line 127 in ./src/class_loader.cpp
+[ros2_control_node-6] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[ros2_control_node-6]          at line 127 in ./src/class_loader.cpp
+[ros2_control_node-6] [INFO] [1773911445.672023534] [controller_manager.pal_statistics]: Async messages lost 0
+[ros2_control_node-6] [INFO] [1773911445.672039881] [controller_manager.pal_statistics]: publish_async_failures_ 0
+[ros2_control_node-6] [INFO] [1773911445.674557160] [controller_manager.pal_statistics]: Async messages lost 0
+[ros2_control_node-6] [INFO] [1773911445.674568843] [controller_manager.pal_statistics]: publish_async_failures_ 0
+[ERROR] [ros2_control_node-6]: process has died [pid 28550, exit code 1, cmd '/opt/ros/jazzy/lib/controller_manager/ros2_control_node --ros-args --params-file /tmp/launch_params_8s4f2_j6 --params-file /tmp/launch_params_122ybvln --params-file /home/gerard/xarm_ws/install/xarm_api/share/xarm_api/config/xarm_params.yaml'].
+[xarm_driver_node-7] [net work] Error: connect, errno=115
+[xarm_driver_node-7] xarm report2 thread is quit.
+[xarm_driver_node-7] Error: Tcp Report Norm connection failed, ip: 192.168.1.219

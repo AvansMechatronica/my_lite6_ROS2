@@ -13,7 +13,7 @@ Je zult een service zien met de naam `/xarm/set_vacuum_gripper`. Deze service ka
 
 Met deze kun je zowel een parallelle gripper als een vacuüm gripper aansturen. 
 
-## Commandline
+## Besturen vanaf de Command-line
 ```bash
 ros2 service call /xarm/set_vacuum_gripper xarm_msgs/srv/VacuumGripperCtrl "{'on': false}"
 ```

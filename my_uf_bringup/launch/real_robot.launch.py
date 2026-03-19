@@ -20,7 +20,7 @@ from uf_ros_lib.uf_robot_utils import generate_ros2_control_params_temp_file
 
 
 def launch_setup(context, *args, **kwargs):
-    robot_ip = LaunchConfiguration('robot_ip', default='192.168.1.164')
+    robot_ip = LaunchConfiguration('robot_ip', default='192.168.1.219')
     dof = LaunchConfiguration('dof', default=5)
     robot_type = LaunchConfiguration('robot_type', default='xarm')
     report_type = LaunchConfiguration('report_type', default='normal')
@@ -35,10 +35,13 @@ def launch_setup(context, *args, **kwargs):
     add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper', default=False)
     add_bio_gripper = LaunchConfiguration('add_bio_gripper', default=False)
     
-    ros_namespace = LaunchConfiguration('ros_namespace', default='').perform(context)
+    ros_namespace = LaunchConfiguration('ros_namespace', default='').perform(context).strip('/')
 
     ros2_control_plugin = 'uf_robot_hardware/UFRobotSystemHardware'
-    xarm_type = '{}{}'.format(robot_type.perform(context), dof.perform(context) if robot_type.perform(context) in ('xarm', 'lite') else '')
+    xarm_type = '{}{}'.format(
+        robot_type.perform(context),
+        dof.perform(context) if robot_type.perform(context) in ('xarm', 'lite') else ''
+    )
     
     ros2_control_params = generate_ros2_control_params_temp_file(
         os.path.join(get_package_share_directory('my_uf_moveit_config'), 'config', 'ros2_controllers.yaml'),
@@ -46,7 +49,7 @@ def launch_setup(context, *args, **kwargs):
         add_gripper=add_gripper.perform(context) in ('True', 'true'),
         add_bio_gripper=add_bio_gripper.perform(context) in ('True', 'true'),
         ros_namespace=ros_namespace,
-        robot_type=robot_type.perform(context)
+        robot_type=xarm_type
     )
 
     pkg_path = os.path.join(get_package_share_directory('my_uf_moveit_config'))
@@ -149,7 +152,10 @@ def launch_setup(context, *args, **kwargs):
         }.items(),
     )
 
+    controller_manager_name = f'/{ros_namespace}/controller_manager' if ros_namespace else '/controller_manager'
+
     controllers = [
+        'joint_state_broadcaster',
         '{}{}_traj_controller'.format(prefix.perform(context), xarm_type),
     ]
     # Load controllers
@@ -161,10 +167,9 @@ def launch_setup(context, *args, **kwargs):
             output='screen',
             arguments=[
                 controller,
-                '--controller-manager', '{}/controller_manager'.format(ros_namespace)
+                '--controller-manager', controller_manager_name
             ],
         ))
-
     # control_node = Node(
     #     package='controller_manager',
     #     executable='spawner',
