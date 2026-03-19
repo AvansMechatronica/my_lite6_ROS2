@@ -31,15 +31,14 @@ def launch_setup(context, *args, **kwargs):
     attach_xyz = LaunchConfiguration('attach_xyz', default='"0 0 0"')
     attach_rpy = LaunchConfiguration('attach_rpy', default='"0 0 0"')
    
-    add_gripper = LaunchConfiguration('add_gripper', default=True)
-    add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper', default=True)
+    add_gripper = LaunchConfiguration('add_gripper', default=False)
+    add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper', default=False)
     add_bio_gripper = LaunchConfiguration('add_bio_gripper', default=False)
     
     ros_namespace = LaunchConfiguration('ros_namespace', default='').perform(context)
 
     ros2_control_plugin = 'uf_robot_hardware/UFRobotSystemHardware'
-    xarm_type = '{}{}'.format(robot_type.perform(context), dof.perform(context) if robot_type.perform(context) in ('xarm', 'lite') else '')
-    
+
     ros2_control_params = generate_ros2_control_params_temp_file(
         os.path.join(get_package_share_directory('my_uf_moveit_config'), 'config', 'ros2_controllers.yaml'),
         prefix=prefix.perform(context), 
@@ -119,7 +118,7 @@ def launch_setup(context, *args, **kwargs):
         output='screen',
         parameters=[{'source_list': ['{}{}/joint_states'.format(prefix.perform(context), hw_ns.perform(context))]}],
         remappings=[
-            ('follow_joint_trajectory', '{}{}_traj_controller/follow_joint_trajectory'.format(prefix.perform(context), xarm_type)),
+            ('follow_joint_trajectory', '{}uf_traj_controller/follow_joint_trajectory'.format(prefix.perform(context))),
         ],
     )
 
@@ -150,7 +149,8 @@ def launch_setup(context, *args, **kwargs):
     )
 
     controllers = [
-        '{}{}_traj_controller'.format(prefix.perform(context), xarm_type),
+        'joint_state_broadcaster',
+        '{}uf_traj_controller'.format(prefix.perform(context)),
     ]
     # Load controllers
     controller_nodes = []
