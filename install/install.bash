@@ -1,20 +1,21 @@
+#!/bin/bash
 
+# Save the current directory
+current_dir=$(pwd)
+cd ../..
+
+# Update package lists
 sudo apt update
-sudo apt -y install ros-$ROS_DISTRO-moveit
-sudo apt -y install ros-$ROS_DISTRO-joint-state-publisher-gui
-sudo apt -y install ros-$ROS_DISTRO-combined-robot-hw
-sudo apt -y install ros-$ROS_DISTRO-ros2-control
-sudo apt -y install ros-$ROS_DISTRO-ros2-controllers
-sudo apt -y install ros-$ROS_DISTRO-moveit-servo
-sudo apt -y install ros-$ROS_DISTRO-moveit-visual-tools
-sudo apt -y install ros-$ROS_DISTRO-ros-controllers
-sudo apt -y install ros-$ROS_DISTRO-controller-manager
-sudo apt -y install ros-$ROS_DISTRO-controller-interface
-sudo apt -y install ros-$ROS_DISTRO-controller-manager-msgs
-sudo apt -y install ros-$ROS_DISTRO-gz-ros2-control
-sudo apt -y install ros-$ROS_DISTRO-tf-transformations
 
-CURRENT_DIR=$(pwd)
+# Install dependencies and build the workspace
+cd ..
+rosdep init
+rosdep update
+rosdep install --ignore-src --from-paths src -y
+
+
+
+cd "$current_dir"
 
 if ros2 pkg list | grep -q "xarm_description"; then
     echo "xarm packages alredy installed"
@@ -29,7 +30,7 @@ else
     git submodule update --init --remote
 fi
 
-cd "$CURRENT_DIR"
+cd "$current_dir"
 if ros2 pkg list | grep -q "pymoveit2"; then
     echo "pymoveit2 packages alredy installed"
 else
@@ -37,7 +38,7 @@ else
     git clone https://github.com/AvansMechatronica/pymoveit2.git ../../pymoveit2 
 fi
 
-cd "$CURRENT_DIR"
+cd "$current_dir"
 if ros2 pkg list | grep -q "my_moveit_python"; then
     echo "my_moveit_python packages alredy installed"
 else
@@ -45,7 +46,7 @@ else
     git clone https://github.com/AvansMechatronica/my_moveit_python.git ../../my_moveit_python 
 fi
 
-cd "$CURRENT_DIR"
+cd "$current_dir"
 cd ../../..
 rosdep update
 rosdep install --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
