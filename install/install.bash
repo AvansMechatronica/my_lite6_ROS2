@@ -50,3 +50,8 @@ cd "$current_dir"
 cd ../../..
 rosdep update
 rosdep install --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
+
+# Set QT_QPA_PLATFORM to xcb
+if ! env | grep -q "QT_QPA_PLATFORM=xcb"; then
+    echo "export QT_QPA_PLATFORM=xcb" >> ~/.bashrc
+fi
