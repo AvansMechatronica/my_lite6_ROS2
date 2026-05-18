@@ -104,6 +104,7 @@ Dit zal ongeveer dit resultaat opleveren:
 Controleer of het ip-adres in het juiste subnet opgenomen is `192.168.1.x`
 
 Soms werkt dit commando niet goed, gebruik dan de methode `Testen communicatie met uFactory Lite6 robot` die verderop is beschreven.
+:::
 
 #### Robot besturen met je internet browser
 Je kunt met je internetbrowser(Chrome/Firefox/Edge) naar een webpagina van de uFactory robot gaan en in de adresbalk het volgende web-pagina intypen
