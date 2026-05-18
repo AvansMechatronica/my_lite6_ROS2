@@ -87,8 +87,8 @@ Je kunt het volgende script uitvoeren in een command-console:
 
 ```bash
 # Add source command to .bashrc if it doesn't already exist
-if ! grep -Fxq "source $(pwd)/install/setup.bash" ~/.bashrc; then
-    echo "source $(pwd)/install/setup.bash" >> ~/.bashrc
+if ! grep -Fxq "source ~/my_uf_ws/install/setup.bash" ~/.bashrc; then
+    echo "source ~/my_uf_ws/install/setup.bash" >> ~/.bashrc
     echo "Added source command to .bashrc"
 else
     echo "Source command already exists in .bashrc"
