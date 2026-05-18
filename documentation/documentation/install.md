@@ -83,7 +83,7 @@ source install/setup.bash
 
 ## Toevoegen van de `install/setup.bash` aan `.bashrc`
 Om te voorkomen dat je ieder keer de workspace `my_uf_ws` moet sourcen wordt de `install/setup.bash` toegevoegd aan `.bashrc` (dit (verborgen)bestand bevindt zich in de `$HOME` directory)
-Je kunt het volgende script toepassen in een command-console:
+Je kunt het volgende script uitvoeren in een command-console:
 
 ```bash
 # Add source command to .bashrc if it doesn't already exist
