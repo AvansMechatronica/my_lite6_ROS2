@@ -7,20 +7,6 @@ In dit hoofdtuk wordt beschreven hoe je een verbinding kunt opzetten tussen de d
 
 ::::::{tab-set}
 
-:::::{tab-item} Door middel van `router`
-
-Je kunt een verbinding opzetten tussen de robot en development-computer door middel van een router. De router zorgt voor een stabiele verbinding tussen de robot en development-computer, en voorkomt interferentie met andere apparaten in het netwerk. Tevens kun je met een router ook andere apparaten in het netwerk opnemen zoals b.v. camera's of de teachbot
-
-## Configuratie router
-De router dient geconfigureerd te worden zodat het subnet `192.168.1.0` wordt. 
->Het instellen van de router valt buiten deze beschrijving en is router-type afhankelijk.
-
-:::{tip}
-Gebruik alleen de `LAN` poorten van de router, niet de `WAN` poort.
-:::
-
-
-:::::
 
 :::::{tab-item} Windows: Rechtstreekse met een `cat5-kabel`
 :::: {attention}
@@ -82,6 +68,22 @@ Soms komt de netwerk verbinding niet tot stand, in dat geval kan het helpen om d
 
 :::::
 
+:::::{tab-item} Door middel van `router`
+
+Je kunt een verbinding opzetten tussen de robot en development-computer door middel van een router. De router zorgt voor een stabiele verbinding tussen de robot en development-computer, en voorkomt interferentie met andere apparaten in het netwerk. Tevens kun je met een router ook andere apparaten in het netwerk opnemen zoals b.v. camera's of de teachbot
+
+## Configuratie router
+De router dient geconfigureerd te worden zodat het subnet `192.168.1.0` wordt. 
+>Het instellen van de router valt buiten deze beschrijving en is router-type afhankelijk.
+
+:::{tip}
+Gebruik alleen de `LAN` poorten van de router, niet de `WAN` poort.
+:::
+
+
+:::::
+
+
 ::::::
 
 :::::::
@@ -101,8 +103,14 @@ Dit zal ongeveer dit resultaat opleveren:
 :::{note}
 Controleer of het ip-adres in het juiste subnet opgenomen is `192.168.1.x`
 
-Soms werkt dir commando niet goed, gebruik dan de methode `Testen communicatie met uFactory Lite6 robot` die verderop is beschreven.
+Soms werkt dit commando niet goed, gebruik dan de methode `Testen communicatie met uFactory Lite6 robot` die verderop is beschreven.
 
+#### Robot besturen met je internet browser
+Je kunt met je internetbrowser(Chrome/Firefox/Edge) naar een webpagina van de uFactory robot gaan en in de adresbalk het volgende web-pagina intypen
+```
+<robot-ip>:18333
+```
+Dit kan zowel onder Windows of je(virtule)Linux omgeving.
 
 ### Configuratie uFactory Lite robot
 Verbind de uFactory Lite robot met het netwerk van de router met een `cat5-kabel` en voer de volgende handelingen uit op de teachpendant van de uFactory Lite robot
