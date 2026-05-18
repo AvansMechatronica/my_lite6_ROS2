@@ -86,23 +86,14 @@ Soms komt de netwerk verbinding niet tot stand, in dat geval kan het helpen om d
 
 :::::::
 
-:::{important}
-Bij gebruik van virtuele-machine op development-computer, dient het netwerk als `bridge` geconfigureerd te zijn. Glijd met je muis over de icoontjes, linksonder van de virtuele machine, totdat je `Network Adapter` zie verschijnen. Het type dient Bridged te zijn. Zie Afbeelding.
 
-![image](../images/vmware1.png)
-
-Als dit niet het geval is click dan op het Network Adapter icoontje en selecteer `Settings`. Selecteer in het keuzemenu de optie `Bridged`
-
-![image](../images/vmware2.png)
-
-Let op: Als je in de `bridged` mode staat kun je waarschijnlijk niet met internet communiceren(b.v. om ROS-packages te downloaden, internet-browser of github gebruiken) dien je weer terug te schakelen naar 'NAT' mode.
-:::
 
 ### Netwerkconfiguratie development-computer testen
 Open een terminal en voer het volgende commando uit:
 ```bash
 ifconfig | grep broadcast
 ```
+
 
 Dit zal ongeveer dit resultaat opleveren:
 ```bash
@@ -111,6 +102,8 @@ Dit zal ongeveer dit resultaat opleveren:
 
 :::{note}
 Controleer of het ip-adres in het juiste subnet opgenomen is `192.168.1.x`
+
+Soms werkt dit commando niet correct, probeer met de hier verderop geschreven methode `Testen communicatie met uFactory uf robot`
 :::
 
 
