@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installatie van de uFactory Lite6-template &mdash; uFactory Lite6 Robot Template Repository 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Fysieke uFactory Lite robot" href="real_robot.html" />
+    <link rel="prev" title="Inleiding" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            uFactory Lite6 Robot Template Repository
+              <img src="../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Inleiding</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installatie van de uFactory Lite6-template</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#development-computer">Development computer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloning-de-ros2-ufactory-lite6-template">Cloning de ROS2 uFactory Lite6 template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installatie-van-ufactory-lite6-robot-support-packages">Installatie van uFactory Lite6 Robot support packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bouwen-van-de-workspace">Bouwen van de workspace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#toevoegen-van-de-install-setup-bash-aan-bashrc">Toevoegen van de <code class="docutils literal notranslate"><span class="pre">install/setup.bash</span></code> aan <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testen-van-de-installatie">Testen van de installatie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="real_robot.html">Fysieke uFactory Lite robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">Simulatie uFactory Lite robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_assistant.html">MoveIt Configuratie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtual_environment.html">Virtuele omgeving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_programms.html">Voorbeeld programma’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gripper.html">Gripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teachbot.html">TOS-Teachbot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Problemen oplossen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Veel gestelde vragen</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">uFactory Lite6 Robot Template Repository</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installatie van de uFactory Lite6-template</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/install.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="installatie-van-de-ufactory-lite6-template">
+<h1>Installatie van de uFactory Lite6-template<a class="headerlink" href="#installatie-van-de-ufactory-lite6-template" title="Link to this heading"></a></h1>
+<p>Hier wordt beschreven hoe je de template kunt verkrijgen, kunt bouwen en tenslotte kunt testen.</p>
+<section id="development-computer">
+<h2>Development computer<a class="headerlink" href="#development-computer" title="Link to this heading"></a></h2>
+<p>Als in dit document gesproken wordt over een development-computer dan wordt hiermee bedoeld de laptop/computer waarop je de software in ROS2 ontwikkelt.</p>
+</section>
+<section id="cloning-de-ros2-ufactory-lite6-template">
+<h2>Cloning de ROS2 uFactory Lite6 template<a class="headerlink" href="#cloning-de-ros2-ufactory-lite6-template" title="Link to this heading"></a></h2>
+<p>Voor het maken van de ROS2 uFactory Lite6 template maak je gebruik van een Github repository. Je kunt er voor kiezen om deze clone onder een eigen account van Github te plaatsen (1e keuze hieronder). Je kunt daarna eenvoudig backup’s van je werk maken naar je eigen Github account.</p>
+<blockquote>
+<div><p>we maken gebruik van een prefix <code class="docutils literal notranslate"><span class="pre">my_ur</span></code> in de packages van de repository om onderscheid te maken met de standaard uFactory Lite6 packages.</p>
+</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Met GIT-repository support</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Maak een account aan bij <a class="reference external" href="https://github.com/">Github</a> en login op dit account</p></li>
+<li><p class="sd-card-text">Open de <a class="reference external" href="https://github.com/AvansMechatronica/my_ufactory_ROS2">my_ufactory_ROS2</a> repository</p></li>
+<li><p class="sd-card-text">Maak een Fork van de repository naar je eigen Github account door op het <strong>Fork icoon</strong>  te klikken:</p></li>
+</ul>
+<p class="sd-card-text"><img alt="image" src="../_images/fork.jpg" /></p>
+<ul class="simple">
+<li><p class="sd-card-text">Volg de instructies, maar wijzig de naam van de nieuwe repository niet. Bevestig met <strong>Create Fork</strong></p></li>
+<li><p class="sd-card-text">Nu kun je de workspace als volgt creëren</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/my_uf_ws/src
+<span class="nb">cd</span><span class="w"> </span>~/my_uf_ws/src
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/&lt;jouw_account_naam&gt;/my_ufactory_ROS2.git
+</pre></div>
+</div>
+<p class="sd-card-text"><em>ps. Het gebruik van github (zoals add, commit &amp; push commando’s) valt  buiten de scope van deze documentatie</em></p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Zonder GIT-repository support</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Je kunt de workspace als volgt creëren</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/my_uf_ws/src
+<span class="nb">cd</span><span class="w"> </span>~/my_uf_ws/src
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AvansMechatronica/my_ufactory_ROS2.git
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="installatie-van-ufactory-lite6-robot-support-packages">
+<h2>Installatie van uFactory Lite6 Robot support packages<a class="headerlink" href="#installatie-van-ufactory-lite6-robot-support-packages" title="Link to this heading"></a></h2>
+<p>Met onderstaand commando worden alle benodigde software voor de template geinstalleerd en de workspace gebouwd met colcon.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/my_uf_ws/src/my_ufactory_ROS2/install
+./install.bash
+</pre></div>
+</div>
+</section>
+<section id="bouwen-van-de-workspace">
+<h2>Bouwen van de workspace<a class="headerlink" href="#bouwen-van-de-workspace" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p>Dit is al gebeurd in de installatie. Wijzig je iets in de workspace dan kun je als volgt bouwen.</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the workspace</span>
+<span class="nb">cd</span><span class="w"> </span>~/my_uf_ws
+colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install
+<span class="nb">source</span><span class="w"> </span>install/setup.bash
+</pre></div>
+</div>
+<p>Heb je slechts 1 package gewijzigd dan kun je onderstaand commando gebruiken om betreffende package te bouwen.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build one of the packages in the workspace</span>
+<span class="nb">cd</span><span class="w"> </span>~/my_uf_ws
+colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install<span class="w"> </span>--packages-select<span class="w"> </span>&lt;package_name&gt;
+<span class="nb">source</span><span class="w"> </span>install/setup.bash
+</pre></div>
+</div>
+</section>
+<section id="toevoegen-van-de-install-setup-bash-aan-bashrc">
+<h2>Toevoegen van de <code class="docutils literal notranslate"><span class="pre">install/setup.bash</span></code> aan <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code><a class="headerlink" href="#toevoegen-van-de-install-setup-bash-aan-bashrc" title="Link to this heading"></a></h2>
+<p>Om te voorkomen dat je ieder keer de workspace <code class="docutils literal notranslate"><span class="pre">my_uf_ws</span></code> moet sourcen wordt de <code class="docutils literal notranslate"><span class="pre">install/setup.bash</span></code> toegevoegd aan <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> (dit (verborgen)bestand bevindt zich in de <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> directory)
+Je kunt het volgende script uitvoeren in een command-console:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add source command to .bashrc if it doesn&#39;t already exist</span>
+<span class="k">if</span><span class="w"> </span>!<span class="w"> </span>grep<span class="w"> </span>-Fxq<span class="w"> </span><span class="s2">&quot;source ~/my_uf_ws/install/setup.bash&quot;</span><span class="w"> </span>~/.bashrc<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/my_uf_ws/install/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Added source command to .bashrc&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Source command already exists in .bashrc&quot;</span>
+<span class="k">fi</span><span class="w">  </span>
+</pre></div>
+</div>
+</section>
+<section id="testen-van-de-installatie">
+<h2>Testen van de installatie<a class="headerlink" href="#testen-van-de-installatie" title="Link to this heading"></a></h2>
+<p>Je kunt de installatie testen door onderstaand commando. Je hebt hiervoor geen fysieke robot of simulatie omgeving nodig.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>my_uf_moveit_config<span class="w"> </span>demo.launch.py
+</pre></div>
+</div>
+<p>Je kunt nu in RVIZ het model van de robot-applicatie zien en met de knop <code class="docutils literal notranslate"><span class="pre">Goal</span> <span class="pre">State</span></code> een positie kiezen en de weg naar de positie volgen met de <code class="docutils literal notranslate"><span class="pre">Plan</span></code> knop. Stel eventueel eerst een <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">State</span></code> in.</p>
+<blockquote>
+<div><p>Omdat er geen fysieke robot of Gazebo simulatie is kun je geen <code class="docutils literal notranslate"><span class="pre">Execute</span></code> functies uitvoeren.</p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="overview.html" class="btn btn-neutral float-left" title="Inleiding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="real_robot.html" class="btn btn-neutral float-right" title="Fysieke uFactory Lite robot" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

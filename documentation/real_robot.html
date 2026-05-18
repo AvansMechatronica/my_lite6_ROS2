@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fysieke uFactory Lite robot &mdash; uFactory Lite6 Robot Template Repository 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Simulatie uFactory Lite robot" href="simulation.html" />
+    <link rel="prev" title="Installatie van de uFactory Lite6-template" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            uFactory Lite6 Robot Template Repository
+              <img src="../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installatie van de uFactory Lite6-template</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fysieke uFactory Lite robot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#netwerkverbinding-opzetten">Netwerkverbinding opzetten</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#netwerkconfiguratie-development-computer-testen">Netwerkconfiguratie development-computer testen</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#robot-besturen-met-je-internet-browser">Robot besturen met je internet browser</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuratie-ufactory-lite-robot">Configuratie uFactory Lite robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opvragen-ip-adres-van-de-ufactory-lite6-robot">Opvragen IP-adres van de uFactory Lite6 robot</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#testen-communicatie-met-ufactory-lite6-robot">Testen communicatie met uFactory Lite6 robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#starten-van-de-robot">Starten van de robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testen-van-de-robot">Testen van de robot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">Simulatie uFactory Lite robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_assistant.html">MoveIt Configuratie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtual_environment.html">Virtuele omgeving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_programms.html">Voorbeeld programma’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gripper.html">Gripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teachbot.html">TOS-Teachbot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Problemen oplossen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Veel gestelde vragen</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">uFactory Lite6 Robot Template Repository</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Fysieke uFactory Lite robot</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/real_robot.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="fysieke-ufactory-lite-robot">
+<h1>Fysieke uFactory Lite robot<a class="headerlink" href="#fysieke-ufactory-lite-robot" title="Link to this heading"></a></h1>
+<p>In dit hoofdtuk wordt beschreven hoe je een verbinding kunt opzetten tussen de development-computer en de fysieke robot.</p>
+<section id="netwerkverbinding-opzetten">
+<h2>Netwerkverbinding opzetten<a class="headerlink" href="#netwerkverbinding-opzetten" title="Link to this heading"></a></h2>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Windows: Rechtstreekse met een <code class="docutils literal notranslate"><span class="pre">cat5-kabel</span></code></label><div class="sd-tab-content docutils">
+<div class="admonition attention">
+<p class="admonition-title">Let op</p>
+<p class="sd-card-text">Gebruik deze optie als je een Virtual Machine gebruikt op je development-computer.</p>
+</div>
+<p class="sd-card-text">Je kunt een rechtstreekse verbinding opzetten tussen de robot en development-computer door middel van een <code class="docutils literal notranslate"><span class="pre">cat5-kabel</span></code>. Kies deze optie als je geen andere apparaten in het netwerk wilt opnemen.</p>
+<p class="sd-card-text">Je kunt in dit geval het ip-adres van de robot en development-computer handmatig instellen. Zorg ervoor dat je deveopment-computer een ip-adres krijgt in het subnet <code class="docutils literal notranslate"><span class="pre">192.168.1.x</span></code>.</p>
+<p class="sd-card-text">Volg dez stappen voor het instellen van een statisch ip-adres op Windows:</p>
+<p class="sd-card-text">Druk op Win + R, typ ncpa.cpl en druk op Enter.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Klik met de rechtermuisknop op je Ethernet adapter en kies Eigenschappen.</p></li>
+<li><p class="sd-card-text">Selecteer Internet Protocol Version 4 (TCP/IPv4) en klik op Eigenschappen.</p></li>
+<li><p class="sd-card-text">Kies “Het volgende IP-adres gebruiken”:</p></li>
+<li><p class="sd-card-text">IP-adres: 192.168.1.2</p></li>
+<li><p class="sd-card-text">Subnetmasker: 255.255.255.0 (dit wordt automatisch ingevuld)</p></li>
+<li><p class="sd-card-text">Standaardgateway: 192.168.1.1</p></li>
+<li><p class="sd-card-text">Klik op OK.</p></li>
+</ol>
+<p class="sd-card-text">De development-computer is nu geconfigureerd met een statisch ip-adres 192.168.1.2 in het subnet <code class="docutils literal notranslate"><span class="pre">192.168.1.x</span></code>.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="Image" src="../_images/Ethernet.jpg" /></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="Image" src="../_images/Ethernet-ip4.jpg" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="sd-card-text">Soms komt de netwerk verbinding niet tot stand, in dat geval kan het helpen om de netwerkverbindingen uit en weer aan te zetten. Je kunt ook proberen om de robot en development-computer te rebooten.</p>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Linux: Rechtstreekse met een <code class="docutils literal notranslate"><span class="pre">cat5-kabel</span></code></label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Je kunt een rechtstreekse verbinding opzetten tussen de robot en development-computer door middel van een <code class="docutils literal notranslate"><span class="pre">cat5-kabel</span></code>. Kies deze optie als je geen andere apparaten in het netwerk wilt opnemen.</p>
+<p class="sd-card-text">je kunt in dit geval het ip-adres van de robot en development-computer handmatig instellen. Zorg ervoor dat je deveopment-computer een ip-adres krijgt in het subnet <code class="docutils literal notranslate"><span class="pre">192.168.1.x</span></code>.</p>
+<p class="sd-card-text">Open op de development-computer de netwerkinstellingen:
+<img alt="image" src="../_images/network-settings.png" /></p>
+<p class="sd-card-text">Kies onder <code class="docutils literal notranslate"><span class="pre">wired</span></code> het tandwiel icoon en vervolgens <code class="docutils literal notranslate"><span class="pre">IPv4</span></code> tabblad. Kies hier voor <code class="docutils literal notranslate"><span class="pre">Manual</span></code> en vul de volgende gegevens in:</p>
+<ul class="simple">
+<li><p class="sd-card-text">IP-adres: 192.168.1.1 (je kunt ook een ander ip-adres kiezen, zolang deze maar in het subnet <code class="docutils literal notranslate"><span class="pre">192.168.1.x</span></code> ligt)</p></li>
+<li><p class="sd-card-text">Netmask: 255.255.255.0</p></li>
+<li><p class="sd-card-text">Gateway: 192.168.1.1</p></li>
+</ul>
+<p class="sd-card-text"><img alt="imgage" src="../_images/wired-config.png" /></p>
+<p class="sd-card-text">Sluit de instellingen.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="sd-card-text">Soms komt de netwerk verbinding niet tot stand, in dat geval kan het helpen om de netwerkverbindingen uit en weer aan te zetten. Je kunt ook proberen om de robot en development-computer te rebooten.</p>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Door middel van <code class="docutils literal notranslate"><span class="pre">router</span></code></label><div class="sd-tab-content docutils">
+<p class="sd-card-text">Je kunt een verbinding opzetten tussen de robot en development-computer door middel van een router. De router zorgt voor een stabiele verbinding tussen de robot en development-computer, en voorkomt interferentie met andere apparaten in het netwerk. Tevens kun je met een router ook andere apparaten in het netwerk opnemen zoals b.v. camera’s of de teachbot</p>
+<p class="rubric" id="configuratie-router">Configuratie router</p>
+<p class="sd-card-text">De router dient geconfigureerd te worden zodat het subnet <code class="docutils literal notranslate"><span class="pre">192.168.1.0</span></code> wordt.</p>
+<blockquote>
+<div><p class="sd-card-text">Het instellen van de router valt buiten deze beschrijving en is router-type afhankelijk.</p>
+</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="sd-card-text">Gebruik alleen de <code class="docutils literal notranslate"><span class="pre">LAN</span></code> poorten van de router, niet de <code class="docutils literal notranslate"><span class="pre">WAN</span></code> poort.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="netwerkconfiguratie-development-computer-testen">
+<h3>Netwerkconfiguratie development-computer testen<a class="headerlink" href="#netwerkconfiguratie-development-computer-testen" title="Link to this heading"></a></h3>
+<p>Open een terminal en voer het volgende commando uit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifconfig<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>broadcast
+</pre></div>
+</div>
+<p>Dit zal ongeveer dit resultaat opleveren:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>inet<span class="w"> </span><span class="m">192</span>.168.1.1<span class="w">  </span>netmask<span class="w"> </span><span class="m">255</span>.255.255.0<span class="w">  </span>broadcast<span class="w"> </span><span class="m">192</span>.168.1.255
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Controleer of het ip-adres in het juiste subnet opgenomen is <code class="docutils literal notranslate"><span class="pre">192.168.1.x</span></code></p>
+<p>Soms werkt dit commando niet goed, gebruik dan de methode <code class="docutils literal notranslate"><span class="pre">Testen</span> <span class="pre">communicatie</span> <span class="pre">met</span> <span class="pre">uFactory</span> <span class="pre">Lite6</span> <span class="pre">robot</span></code> die verderop is beschreven.</p>
+</div>
+<section id="robot-besturen-met-je-internet-browser">
+<h4>Robot besturen met je internet browser<a class="headerlink" href="#robot-besturen-met-je-internet-browser" title="Link to this heading"></a></h4>
+<p>Je kunt met je internetbrowser(Chrome/Firefox/Edge) naar een webpagina van de uFactory robot gaan en in de adresbalk het volgende web-pagina intypen</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">robot</span><span class="o">-</span><span class="n">ip</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">18333</span>
+</pre></div>
+</div>
+<p>Dit kan zowel onder Windows of je(virtule)Linux omgeving.</p>
+</section>
+</section>
+<section id="configuratie-ufactory-lite-robot">
+<h3>Configuratie uFactory Lite robot<a class="headerlink" href="#configuratie-ufactory-lite-robot" title="Link to this heading"></a></h3>
+<p>Verbind de uFactory Lite robot met het netwerk van de router met een <code class="docutils literal notranslate"><span class="pre">cat5-kabel</span></code> en voer de volgende handelingen uit op de teachpendant van de uFactory Lite robot</p>
+</section>
+<section id="opvragen-ip-adres-van-de-ufactory-lite6-robot">
+<h3>Opvragen IP-adres van de uFactory Lite6 robot<a class="headerlink" href="#opvragen-ip-adres-van-de-ufactory-lite6-robot" title="Link to this heading"></a></h3>
+<p>Op de achterzijde van de uFactory Lite robot bevindt zich een sticker met daarop het serienummer van de robot. Op deze sticker staat ook het IP-adres van de robot vermeld. Noteer dit IP-adres, deze heb je later nodig.</p>
+</section>
+</section>
+<section id="testen-communicatie-met-ufactory-lite6-robot">
+<h2>Testen communicatie met uFactory Lite6 robot<a class="headerlink" href="#testen-communicatie-met-ufactory-lite6-robot" title="Link to this heading"></a></h2>
+<p>Je kunt de communicatie met de robot testen met het volgende commando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ping<span class="w"> </span>&lt;robot-ip&gt;
+</pre></div>
+</div>
+<p>Het resultaat moet dan hier op lijken</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>PING &lt;robot-ip&gt; (&lt;robot-ip&gt;) 56(84) bytes of data.
+64 bytes from &lt;robot-ip&gt;: icmp_seq=1 ttl=64 time=0.030 ms
+64 bytes from &lt;robot-ip&gt;: icmp_seq=2 ttl=64 time=0.041 ms
+64 bytes from &lt;robot-ip&gt;: icmp_seq=3 ttl=64 time=0.040 ms
+^C
+--- &lt;robot-ip&gt; ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2069ms
+</pre></div>
+</div>
+</section>
+<section id="starten-van-de-robot">
+<h2>Starten van de robot<a class="headerlink" href="#starten-van-de-robot" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">launch</span> <span class="n">my_uf_bringup</span> <span class="n">real_robot</span><span class="o">.</span><span class="n">launch</span><span class="o">.</span><span class="n">py</span> <span class="n">robot_ip</span><span class="o">:=&lt;</span><span class="n">robot_ip</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Volg de output in de terminal en evalueer of er een goede connectie met de robot tot stand is gekomen.</p>
+<p>RVIZ zal nu worden opgestart en een virtuele weergave van de robot-opstelling wordt nu zichtbaar.
+De stand van de robot in de virtuele wereld moet overeen komen met de stand van de uFactory Lite robot.</p>
+<blockquote>
+<div><p>Je kunt ook in het bestand <code class="docutils literal notranslate"><span class="pre">/&lt;workspace&gt;/src/my_ufactory_ROS2/my_uf_bringup/launch/real_robot.launch.py</span></code> het ip-adres wijzigen op regel 23.Daarna hoef je de robot_ip argument niet meer aan bovenstaande commando toe te voegen.</p>
+</div></blockquote>
+</section>
+<section id="testen-van-de-robot">
+<h2>Testen van de robot<a class="headerlink" href="#testen-van-de-robot" title="Link to this heading"></a></h2>
+<p>Je kunt de robot nu laten bewegen door de <code class="docutils literal notranslate"> <span class="pre">movegroup</span></code>.</p>
+<p>Je kunt de robot nu laten bewegen door het selecteren van een pose met de knop <code class="docutils literal notranslate"><span class="pre">Goal</span> <span class="pre">State</span></code> een positie kiezen en de weg naar de positie volgen met de <code class="docutils literal notranslate"><span class="pre">Plan</span></code> knop. Vervolgens kun je <code class="docutils literal notranslate"><span class="pre">Plan</span> <span class="pre">&amp;</span> <span class="pre">Execute</span></code> of <code class="docutils literal notranslate"><span class="pre">Execute</span></code> bedienen waarna de robot zal bewegen naar de gekozen pose.</p>
+<div class="admonition danger">
+<p class="admonition-title">Gevaar</p>
+<p>Zorg ervoor dat de robot vrijelijk kan bewegen en geen obstakels tegen komt.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="install.html" class="btn btn-neutral float-left" title="Installatie van de uFactory Lite6-template" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="simulation.html" class="btn btn-neutral float-right" title="Simulatie uFactory Lite robot" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

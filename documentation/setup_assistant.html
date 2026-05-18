@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoveIt Configuratie &mdash; uFactory Lite6 Robot Template Repository 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Virtuele omgeving" href="virtual_environment.html" />
+    <link rel="prev" title="Simulatie uFactory Lite robot" href="simulation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            uFactory Lite6 Robot Template Repository
+              <img src="../_static/avans-hogeschool.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installatie van de uFactory Lite6-template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="real_robot.html">Fysieke uFactory Lite robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">Simulatie uFactory Lite robot</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MoveIt Configuratie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#moveit-setup-assistant">MoveIt Setup Assistant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#herstel-van-moveit-configuratie">Herstel van MoveIt Configuratie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtual_environment.html">Virtuele omgeving</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_programms.html">Voorbeeld programma’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gripper.html">Gripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teachbot.html">TOS-Teachbot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Problemen oplossen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Veel gestelde vragen</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">uFactory Lite6 Robot Template Repository</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">MoveIt Configuratie</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/setup_assistant.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="moveit-configuratie">
+<h1>MoveIt Configuratie<a class="headerlink" href="#moveit-configuratie" title="Link to this heading"></a></h1>
+<p>In de template is een MoveIt Configuratie opgenomen die het mogelijk maakt de robot(virtueel of in het echt) te besturen met de <code class="docutils literal notranslate"><span class="pre">movegroup</span></code>-node.</p>
+<p>De movegroup kan worden opgestart met het volgende commando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>my_uf_bringup<span class="w"> </span>movegroup.launch.py
+</pre></div>
+</div>
+<blockquote>
+<div><p>Uiteraard moet eerst de simualtie of robot gestart zijn.</p>
+</div></blockquote>
+<section id="moveit-setup-assistant">
+<h2>MoveIt Setup Assistant<a class="headerlink" href="#moveit-setup-assistant" title="Link to this heading"></a></h2>
+<p>Je kunt de MoveIt configuratie wijzigen met de <code class="docutils literal notranslate"><span class="pre">MoveIt</span> <span class="pre">Setup</span> <span class="pre">assistant</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ros2</span> <span class="n">launch</span> <span class="n">my_uf_moveit_config</span> <span class="n">setup_assistant</span><span class="o">.</span><span class="n">launch</span><span class="o">.</span><span class="n">py</span> 
+</pre></div>
+</div>
+<p>In de <code class="docutils literal notranslate"><span class="pre">MoveIt</span> <span class="pre">Setup</span> <span class="pre">assistant</span></code> zijn alleen de tab-bladen <code class="docutils literal notranslate"><span class="pre">Self-Collisions</span></code> en <code class="docutils literal notranslate"><span class="pre">Robot</span> <span class="pre">Poses</span></code> van belang. Wijzig van andere tab-bladen de inhoud <code class="docutils literal notranslate"><span class="pre">MoveIt</span> <span class="pre">Setup</span> <span class="pre">assistant</span></code>niet, dit kan er voor zorgen dat je MoveIt configuratie niet meer werkt. Zorg er tevens voor dat bij <code class="docutils literal notranslate"><span class="pre">Configuration</span> <span class="pre">Files</span></code> alleen het bestand met <code class="docutils literal notranslate"><span class="pre">.srdf</span></code> geselecteerd is.</p>
+</section>
+<section id="herstel-van-moveit-configuratie">
+<h2>Herstel van MoveIt Configuratie<a class="headerlink" href="#herstel-van-moveit-configuratie" title="Link to this heading"></a></h2>
+<p>Mocht om enige reden je MoveIt configuratie beschadigd zijn geraakt dan kun je dit herstellen door de inhoud uit de backup folder terug te zetten.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-v<span class="w"> </span>~/my_uf_ws/src/my_ufactory_ROS2/my_uf_moveit_config/config/backup/*.*<span class="w"> </span>~/my_uf_ws/src/my_ufactory_ROS2/my_uf_moveit_config/config
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="simulation.html" class="btn btn-neutral float-left" title="Simulatie uFactory Lite robot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="virtual_environment.html" class="btn btn-neutral float-right" title="Virtuele omgeving" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Gerard Harkema.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
