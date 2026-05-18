@@ -20,14 +20,25 @@ cd "$current_dir"
 if ros2 pkg list | grep -q "xarm_description"; then
     echo "xarm packages alredy installed"
 else
+    mkdir -p ~/xarm_ws/src
+    cd ~/xarm_ws/src
     echo "cloning xarm packages"
-    git clone https://github.com/xArm-Developer/xarm_ros2.git ../../xarm_ros -b $ROS_DISTRO --recursive 
+    git clone https://github.com/xArm-Developer/xarm_ros2.git -b $ROS_DISTRO --recursive 
     #git clone https://github.com/ros-planning/moveit_task_constructor.git ../../moveit_task_constructor -b $ROS_DISTRO
 
-    cd ../../xarm_ros
+    cd ~/xarm_ws/src/xarm_ros
     git pull
     git submodule sync
     git submodule update --init --remote
+    cd ~/xarm_ws
+    colcon build --symlink-install
+    # Add source command to .bashrc if it doesn't already exist
+    if ! grep -Fxq "source ~/xarm_ws/install/setup.bash" ~/.bashrc; then
+        echo "source ~/xarm_ws/install/setup.bash" >> ~/.bashrc
+        echo "Added source command to .bashrc"
+    else
+        echo "Source command already exists in .bashrc"
+    fi  
 fi
 
 cd "$current_dir"
