@@ -17,7 +17,10 @@ Je kunt de MoveIt configuratie wijzigen met de `MoveIt Setup assistant`:
 ros2 launch my_uf_moveit_config setup_assistant.launch.py 
 ```
 
+:::{warning}
 In de `MoveIt Setup assistant` zijn alleen de tab-bladen `Self-Collisions` en `Robot Poses` van belang. Wijzig van andere tab-bladen de inhoud `MoveIt Setup assistant`niet, dit kan er voor zorgen dat je MoveIt configuratie niet meer werkt. Zorg er tevens voor dat bij `Configuration Files` alleen het bestand met `.srdf` geselecteerd is.
+:::
+
 
 ## Herstel van MoveIt Configuratie
 Mocht om enige reden je MoveIt configuratie beschadigd zijn geraakt dan kun je dit herstellen door de inhoud uit de backup folder terug te zetten.
